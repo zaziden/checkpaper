@@ -1,0 +1,191 @@
+header{
+	height: 100px;
+	background-color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title{
+	font-size: 50px;
+	margin-left: 60px;
+	font-family: Impact;
+}
+
+.new{
+	text-decoration: none;
+	border: 1px solid black;
+	padding: 15px;
+	margin-right: 30px;
+	color: #000;
+	background-color: cadetblue;
+	box-shadow: 5px 5px #000;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.new:active{
+	box-shadow: none;
+	margin: 0 25px 0 0;
+}
+
+.log{
+	text-decoration: none;
+	border: 1px solid black;
+	padding: 15px;
+	margin-right: 30px;
+	color: #000;
+	background-color: cadetblue;
+	box-shadow: 5px 5px #000;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.log:active{
+	box-shadow: none;
+	margin: 0 25px 0 5px;
+}
+
+main{
+	height: calc(100vh - 200px);
+}
+
+.imag{
+	position: relative;
+	height: calc(100vh - 200px);
+	width: 100%;
+}
+
+.imag img{
+	height: calc(100vh - 200px);
+	width: 100%;
+	opacity: 0.5;
+	position: absolute;
+}
+
+.createbtn{
+	position: absolute;
+	font-size: 50px;
+	margin: 50px;
+	width: 100%;
+	height: calc(100vh - 200px);
+}
+
+.menubtn{
+	width: 200px;
+	text-decoration: none;
+	border: 2px solid greenyellow;
+	margin: 50px 0 0 22%;
+	color: #000;
+	background-color: greenyellow;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+	position: absolute;
+}
+.menubtn:active{
+	box-shadow: none;
+	margin: 50px 0 0 22.3%;
+	opacity: 0.5;
+}
+
+.guestbtn{
+	width: 200px;
+	text-align: center;
+	text-decoration: none;
+	border: 2px solid greenyellow;
+	margin: 50px 0 0 57%;
+	color: #000;
+	background-color: greenyellow;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+	position: absolute;
+}
+.guestbtn:active{
+	box-shadow: none;
+	margin: 50px 0 0 57.3%;
+	opacity: 0.5;
+}
+
+.staffbtn{
+	text-decoration: none;
+	border: 2px solid greenyellow;
+	width: 200px;
+	margin: 300px 0 0 22%;
+	color: #000;
+	background-color: greenyellow;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+	position: absolute;
+	text-align: center;
+}
+.staffbtn:active{
+	box-shadow: none;
+	margin: 300px 0 0 22.3%;
+	opacity: 0.5;
+}
+
+.chackroombtn{
+	text-decoration: none;
+	border: 2px solid greenyellow;
+	width: 200px;
+	margin: 300px 0 0 57%;
+	color: #000;
+	background-color: greenyellow;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+	position: absolute;
+	text-align: center;
+}
+.chackroombtn:active{
+	box-shadow: none;
+	margin: 300px 0 0 57.3%;
+	opacity: 0.5;
+}
+
+.allsalebtn{
+	text-decoration: none;
+	border: 2px solid greenyellow;
+	margin: 170px 0 0 40%;
+	width: 200px;
+	color: #000;
+	background-color: greenyellow;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+	position: absolute;
+	text-align: center;
+}
+.allsalebtn:active{
+	box-shadow: none;
+	margin: 170px 0 0 40.3%;
+	opacity: 0.5;
+}
+
+
+footer{
+	height: 100px;
+	background-color: gray;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.out{
+	text-decoration: none;
+	border: 1px solid black;
+	padding: 15px;
+	margin-right: 30px;
+	color: #000;
+	background-color: cadetblue;
+	box-shadow: 5px 5px #000;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.out:active{
+	box-shadow: none;
+	margin: 0 25px 0 0;
+}
+
