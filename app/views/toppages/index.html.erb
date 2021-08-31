@@ -4,8 +4,7 @@
     <h1>CHECK PAPER</h1>
   </div>
   <div class="login">
-    <a href="" class="new">新規登録</a>
-    <a href="#" class="log">ログイン</a>
+    <%= link_to current_user.name, edit_user_path(current_user), class: "shop" %>
   </div>
 </header>
 <main>
@@ -22,7 +21,7 @@
 </main>
 <footer>
   <div class="logout">
-    <a href="#" class="out">ログアウト</a>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'out'%>
   </div>
 </footer>
 </body>
