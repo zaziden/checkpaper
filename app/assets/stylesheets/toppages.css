@@ -1,5 +1,6 @@
 header{
 	height: 100px;
+	
 	background-color: gray;
 	display: flex;
 	align-items: center;
@@ -10,6 +11,9 @@ header{
 	font-size: 50px;
 	margin-left: 60px;
 	font-family: Impact;
+	background-color: greenyellow;
+	border-radius: 5px;
+	padding: 0 10px;
 }
 
 .new{
@@ -46,53 +50,54 @@ header{
 
 main{
 	height: calc(100vh - 200px);
+	
 }
 
 .imag{
 	position: relative;
 	height: calc(100vh - 200px);
-	width: 100%;
 }
 
 .imag img{
 	height: calc(100vh - 200px);
-	width: 100%;
+	width: 100vw;
 	opacity: 0.5;
 	position: absolute;
 }
 
 .createbtn{
 	position: absolute;
-	font-size: 50px;
-	margin: 50px;
-	width: 100%;
+	margin: 50px 0 50px 0;
+	width: 100vw;
 	height: calc(100vh - 200px);
+	font-size: 200%;
 }
 
 .menubtn{
-	width: 200px;
+	width: 15%;
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	margin: 50px 0 0 22%;
+	margin: 5% 0 0 25%;
 	color: #000;
 	background-color: greenyellow;
 	cursor: pointer;
 	border-radius: 5px;
 	box-shadow: 5px 5px #000;
 	position: absolute;
+	text-align: center;
 }
 .menubtn:active{
 	box-shadow: none;
-	margin: 50px 0 0 22.3%;
-	opacity: 0.5;
+	margin: 5% 0 0 25.3%;
+	opacity: 0.8;
 }
 
 .guestbtn{
-	width: 200px;
+	width: 15%;
 	text-align: center;
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	margin: 50px 0 0 57%;
+	margin: 5% 0 0 60%;
 	color: #000;
 	background-color: greenyellow;
 	cursor: pointer;
@@ -102,15 +107,15 @@ main{
 }
 .guestbtn:active{
 	box-shadow: none;
-	margin: 50px 0 0 57.3%;
-	opacity: 0.5;
+	margin: 5% 0 0 60.3%;
+	opacity: 0.8;
 }
 
 .staffbtn{
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	width: 200px;
-	margin: 300px 0 0 22%;
+	width: 15%;
+	margin: 20% 0 0 25%;
 	color: #000;
 	background-color: greenyellow;
 	cursor: pointer;
@@ -121,15 +126,15 @@ main{
 }
 .staffbtn:active{
 	box-shadow: none;
-	margin: 300px 0 0 22.3%;
-	opacity: 0.5;
+	margin: 20% 0 0 25.3%;
+	opacity: 0.8;
 }
 
 .chackroombtn{
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	width: 200px;
-	margin: 300px 0 0 57%;
+	width: 15%;
+	margin: 20% 0 0 60%;
 	color: #000;
 	background-color: greenyellow;
 	cursor: pointer;
@@ -140,15 +145,15 @@ main{
 }
 .chackroombtn:active{
 	box-shadow: none;
-	margin: 300px 0 0 57.3%;
-	opacity: 0.5;
+	margin: 20% 0 0 60.3%;
+	opacity: 0.8;
 }
 
 .allsalebtn{
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	margin: 170px 0 0 40%;
-	width: 200px;
+	margin: 12% 0 0 43%;
+	width: 15%;
 	color: #000;
 	background-color: greenyellow;
 	cursor: pointer;
@@ -159,13 +164,14 @@ main{
 }
 .allsalebtn:active{
 	box-shadow: none;
-	margin: 170px 0 0 40.3%;
-	opacity: 0.5;
+	margin: 12% 0 0 43.3%;
+	opacity: 0.8;
 }
 
 
 footer{
 	height: 100px;
+	width: 100%;
 	background-color: gray;
 	display: flex;
 	justify-content: flex-end;
@@ -183,7 +189,6 @@ footer{
 	cursor: pointer;
 	border-radius: 5px;
 }
-
 .out:active{
 	box-shadow: none;
 	margin: 0 25px 0 0;
