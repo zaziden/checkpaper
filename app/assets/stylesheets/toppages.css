@@ -24,6 +24,12 @@ header{
 	font-family: Impact;
 	background-color: greenyellow;
 	border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.shop:active{
+	box-shadow: none;
+	margin: 0 55px 0 0px;
+	opacity: 0.8;
 }
 
 main{

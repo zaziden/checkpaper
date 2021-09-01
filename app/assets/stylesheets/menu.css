@@ -1,0 +1,124 @@
+.main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ham {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background-color: greenyellow;
+  margin: 20px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.ham:active{
+	box-shadow: none;
+	margin: 25px 20px 20px 20px;
+	opacity: 0.8;
+}
+.ham_line {
+	position: absolute;
+	left: 20px;
+	width: 20px;
+	height: 5px;
+	background-color: #333333;
+}
+.ham_line1 {
+	top: 18px;
+}
+.ham_line2 {
+	top: 26px;
+}
+.ham_line3 {
+	top: 34px;
+}
+
+.ham_line {
+	transition: all 0.3s;
+}
+
+/* 以下はすべて新規行で追加 */
+.clicked .ham_line1 {
+	transform: rotate(45deg);
+	top: 26px;
+}
+.clicked .ham_line2 {
+	width: 0px;
+}
+.clicked .ham_line3 {
+	transform: rotate(-45deg);
+	top: 26px;
+}
+
+.menu {
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	left: -500px;
+	background-color: greenyellow;
+	transition: all 0.8s;
+  padding: 100px 0 0 100px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.clicked .menu {
+	left: 8px;
+}
+
+.chat-room-form__field--left{
+  padding-bottom: 5px;
+}
+.menu-label{
+  font-family: Impact;
+  font-size: 20px;
+}
+
+.chat-room-form__field--right{
+  padding-bottom: 10px;
+}
+.price-label{
+  font-family: Impact;
+  font-size: 20px;
+}
+
+.action-btn{
+  font-family: Impact;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*メニュー一覧*/
+.createform{
+  height: calc(100vh - 222px);
+  width: 100%;
+  margin: 0 0 0 20%;
+  padding: 20px 50px 0px 50px;
+  overflow: scroll;
+}
+
+.menus{
+  display: flex;
+  justify-content: space-between;
+}
+.menus-name{
+  color: #000;
+  text-decoration: none;
+  background-color: greenyellow;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+  font-size: 30px;
+  font-family: arial unicode ms;
+}
+.menus-price{
+  margin: 10px 0 30px 0;
+  padding: 5px 10px 0 10px;
+  
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+  font-family: Impact;
+  font-size: 30px;
+}

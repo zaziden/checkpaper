@@ -1,0 +1,79 @@
+<body>
+<header>
+  <div class="title">
+    <h1>MENU LIST</h1>
+  </div>
+  <div class="login">
+    <%= link_to current_user.name, root_path(current_user), data: {"turbolinks" => false}, class: "shop" %>
+  </div>
+</header>
+<main>
+  <div class="main">
+    <div class="menuber">
+      <div class="ham" id="ham">
+	      <span class="ham_line ham_line1"></span>
+	      <span class="ham_line ham_line2"></span>
+	      <span class="ham_line ham_line3"></span>
+      </div>
+      <div class="menu_wrapper" id="menu_wrapper">
+	      <div class="menu">
+    	    <%=form_with model: @menu, local: true do |f|%>
+          <div class='chat-room-form__field'>
+            <div class='chat-room-form__field--left'>
+              <%= f.label 'MENU Name', class: 'menu-label'%>
+            </div>
+            <div class='chat-room-form__field--right'>
+              <%= f.text_field :menu_name, class: 'chat__room_name chat-room-form__input', placeholder: '商品名を入力'%>
+            </div>
+          </div>
+        <div class='chat-room-form__field'>
+          <div class='chat-room-form__field--left'>
+            <%= f.label 'Price', class: 'price-label'%>
+          </div>
+          <div class='chat-room-form__field--right'>
+            <%= f.text_field :price, class: 'chat__room_name chat-room-form__input', placeholder: '値段を入力'%>
+          </div>
+        </div>
+        <div class='chat-room-form__field'>
+        </div>
+        <div class='chat-room-form__field'>
+          <div class='chat-room-form__field--left'></div>
+          <div class='chat-room-form__field--right'>
+            <%= f.submit 'Push', class: 'action-btn'%>
+          </div>
+      </div>
+      <% end %>
+	    </div>
+      </div>
+    </div>
+    <div class="createform">
+      <div class="menus-all">
+        <% current_user.menus.each do |menu| %>
+        <div class="menus">
+          <div class="menus-name">
+            <%= menu.menu_name %>
+          </div>
+          <div class="menus-price">
+            ¥<%= menu.price %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="logout">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks" => false}, class: 'out'%>
+  </div>
+</footer>
+</body>
+
+<script>
+  const ham = document.getElementById('ham');
+  const menu_wrapper = document.getElementById('menu_wrapper');
+  ham.addEventListener('click',function() {
+	ham.classList.toggle('clicked');
+	menu_wrapper.classList.toggle('clicked');
+  });
+</script>

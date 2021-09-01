@@ -32,7 +32,7 @@
 | Column    | Type         | Options                        |
 | ----------| ------------ | ------------------------------ |
 | menu_name | string       | null: false                    |
-| price     | integer      | null: false                    |
+| price     | integer      |                                |
 | user      | references   | null: false, foreign_key: true |
 
 ### Association
