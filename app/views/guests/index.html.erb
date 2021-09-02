@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    <h1>GUEST LIST</h1>
+    GUEST LIST
   </div>
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
@@ -62,7 +62,7 @@
       <div class="menu_wrapper" id="menu_wrapper2">
         <div class="menu2">
           <div class="menus-all">
-            <h1>ゲスト一覧</h1>
+            ゲスト一覧
             <% current_user.guests.order("guest_name DESC").each do |guest| %>
             <div class="menus">
               <div class="menus-name2">
@@ -85,7 +85,7 @@
       <div class="menu_wrapper" id="menu_wrapper3">
         <div class="menu3">
           <div class="menus-all1">
-            <h1>トップメニュー</h1>
+            トップメニュー
             <div class="menu-btn1">
               <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
             </div>
