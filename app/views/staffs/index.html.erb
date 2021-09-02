@@ -1,13 +1,13 @@
 <body>
 <header>
   <div class="title">
-    <h1>MENU LIST</h1>
+    <h1>Staff List</h1>
   </div>
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
   <% end %>
   <div class="login">
-    <%= link_to current_user.name, root_path(current_user), data: {"turbolinks" => false}, class: "shop" %>
+    <%= link_to current_user.name, root_path(current_user), class: "shop" %>
   </div>
 </header>
 
@@ -19,35 +19,28 @@
 	      <span class="ham_line ham_line2"></span>
 	      <span class="ham_line ham_line3"></span>
       </div>
-
       <div class="menu_wrapper" id="menu_wrapper">
 	      <div class="menu">
-    	    <%=form_with model: @menu, local: true do |f|%>
+    	    <%=form_with model: @staff, local: true do |f|%>
           <div class='chat-room-form__field'>
             <div class='chat-room-form__field--left'>
-              <%= f.label 'MENU Name', class: 'menu-label'%>
+              <%= f.label 'Nick Name', class: 'menu-label'%>
             </div>
             <div class='chat-room-form__field--right'>
-              <%= f.text_field :menu_name, class: 'chat__room_name chat-room-form__input', placeholder: '商品名を入力'%>
+              <%= f.text_field :nickname, class: 'chat__room_name chat-room-form__input', placeholder: 'スタッフ名を入力'%>
             </div>
           </div>
-        <div class='chat-room-form__field'>
-          <div class='chat-room-form__field--left'>
-            <%= f.label 'Price', class: 'price-label'%>
+          <div class='chat-room-form__field'>
           </div>
-          <div class='chat-room-form__field--right'>
-            <%= f.text_field :price, class: 'chat__room_name chat-room-form__input', placeholder: '値段を入力'%>
+          <div class='chat-room-form__field'>
           </div>
-        </div>
-        <div class='chat-room-form__field'>
-        </div>
-        <div class='chat-room-form__field'>
-          <div class='chat-room-form__field--left'></div>
+          <div class='chat-room-form__field'>
+            <div class='chat-room-form__field--left'></div>
             <div class='chat-room-form__field--right'>
               <%= f.submit 'Push', class: 'action-btn'%>
             </div>
           </div>
-          <% end %>
+        <% end %>
 	      </div>
       </div>
     </div>
@@ -60,16 +53,13 @@
       </div>
 
       <div class="menu_wrapper" id="menu_wrapper2">
-        <div class="menu4">
+        <div class="menu2">
           <div class="menus-all">
-            <h1>メニュー</h1>
-            <% current_user.menus.order("price").each do |menu| %>
+            <h1>スタッフ一覧</h1>
+            <% current_user.staffs.order("nickname DESC").each do |staff| %>
             <div class="menus">
-              <div class="menus-name4">
-                <%= menu.menu_name %> 
-              </div>
-              <div class="menus-name4">
-                ¥<%= menu.price %> 
+              <div class="menus-name2">
+                <%= staff.nickname %> 
               </div>
             </div>
             <% end %>
@@ -90,7 +80,7 @@
           <div class="menus-all1">
             <h1>トップメニュー</h1>
             <div class="menu-btn1">
-              <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
+              <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
             </div>
             <div class="guest-btn1">
               <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
@@ -110,7 +100,7 @@
 
 <footer>
   <div class="logout">
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks" => false}, class: 'out'%>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'out'%>
   </div>
 </footer>
 </body>

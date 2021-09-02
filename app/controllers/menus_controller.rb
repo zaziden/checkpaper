@@ -10,6 +10,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
+      flash[:notice] = "メニューを登録しました"
       redirect_to menus_path(current_user.id)
     else
       render :index

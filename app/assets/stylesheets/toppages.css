@@ -32,6 +32,7 @@ header{
 	opacity: 0.8;
 }
 
+/*メイン*/
 main{
 	height: calc(100vh - 200px);
 	
@@ -49,6 +50,7 @@ main{
 	position: absolute;
 }
 
+/*各種作成ボタン*/
 .createbtn{
 	position: absolute;
 	margin: 50px 0 50px 0;
@@ -152,7 +154,7 @@ main{
 	opacity: 0.8;
 }
 
-
+/*下部*/
 footer{
 	height: 100px;
 	width: 100%;

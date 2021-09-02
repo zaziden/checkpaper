@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: "toppages#index"
   resources :users, only: [:edit, :update]
   resources :menus
+  resources :guests
+  resources :staffs
 end

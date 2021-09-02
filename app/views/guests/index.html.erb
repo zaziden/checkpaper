@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    <h1>MENU LIST</h1>
+    <h1>GUEST LIST</h1>
   </div>
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
@@ -22,32 +22,32 @@
 
       <div class="menu_wrapper" id="menu_wrapper">
 	      <div class="menu">
-    	    <%=form_with model: @menu, local: true do |f|%>
+    	    <%=form_with model: @guest, local: true do |f|%>
           <div class='chat-room-form__field'>
             <div class='chat-room-form__field--left'>
-              <%= f.label 'MENU Name', class: 'menu-label'%>
+              <%= f.label 'Guest Name', class: 'menu-label'%>
             </div>
             <div class='chat-room-form__field--right'>
-              <%= f.text_field :menu_name, class: 'chat__room_name chat-room-form__input', placeholder: '商品名を入力'%>
+              <%= f.text_field :guest_name, class: 'chat__room_name chat-room-form__input', placeholder: 'お客様名を入力'%>
             </div>
           </div>
-        <div class='chat-room-form__field'>
+          <div class='chat-room-form__field'>
           <div class='chat-room-form__field--left'>
-            <%= f.label 'Price', class: 'price-label'%>
+            <%= f.label 'Gender', class: 'price-label'%>
           </div>
           <div class='chat-room-form__field--right'>
-            <%= f.text_field :price, class: 'chat__room_name chat-room-form__input', placeholder: '値段を入力'%>
+            <%= f.select :gender, {'男性': 1, '女性': 2}, { include_blank: '性別選択'}, { class: 'chat__room_name chat-room-form__input' } %>
           </div>
         </div>
         <div class='chat-room-form__field'>
         </div>
         <div class='chat-room-form__field'>
           <div class='chat-room-form__field--left'></div>
-            <div class='chat-room-form__field--right'>
-              <%= f.submit 'Push', class: 'action-btn'%>
-            </div>
+          <div class='chat-room-form__field--right'>
+            <%= f.submit 'Push', class: 'action-btn'%>
           </div>
-          <% end %>
+        </div>
+        <% end %>
 	      </div>
       </div>
     </div>
@@ -60,16 +60,13 @@
       </div>
 
       <div class="menu_wrapper" id="menu_wrapper2">
-        <div class="menu4">
+        <div class="menu2">
           <div class="menus-all">
-            <h1>メニュー</h1>
-            <% current_user.menus.order("price").each do |menu| %>
+            <h1>ゲスト一覧</h1>
+            <% current_user.guests.order("guest_name DESC").each do |guest| %>
             <div class="menus">
-              <div class="menus-name4">
-                <%= menu.menu_name %> 
-              </div>
-              <div class="menus-name4">
-                ¥<%= menu.price %> 
+              <div class="menus-name2">
+                <%= guest.guest_name %> 
               </div>
             </div>
             <% end %>
@@ -90,16 +87,16 @@
           <div class="menus-all1">
             <h1>トップメニュー</h1>
             <div class="menu-btn1">
-              <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
+              <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
             </div>
             <div class="guest-btn1">
-              <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
+              <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
             </div>
             <div class="chackroom-btn1">
-              <a href="#" class="chackroombtn1">伝票</a>
+              <%= link_to '伝票', menus_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
             </div>
             <div class="allsale-btn1">
-              <a href="#" class="allsalebtn1">売上</a>
+              <%= link_to '売上', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
             </div>
           </div>
         </div>

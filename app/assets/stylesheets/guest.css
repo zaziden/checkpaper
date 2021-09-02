@@ -1,3 +1,6 @@
+p{
+  font-size: 20px;
+}
 .main{
   display: flex;
   justify-content: space-around;
@@ -83,12 +86,12 @@
 }
 
 .action-btn{
-  padding: 0 3px;
   font-family: Impact;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 5px;
-	box-shadow: 2px 2px #000;
+}
+.action-btn:active{
+  opacity: 0.8;
 }
 
 /*メニュー一覧*/
@@ -104,34 +107,28 @@
   display: flex;
   justify-content: space-between;
 }
-.menus-name4{
+.menus-name{
   color: #000;
   text-decoration: none;
+  background-color: greenyellow;
   padding: 10px;
-  margin: 25px 0;
-  font-size: 20px;
-  font-family: arial unicode ms;
-}
-.menus-price4{
-  margin: 10px 0 30px 0;
-  padding: 5px 10px 0 10px;
-  font-family: Impact;
-  font-size: 20px;
-}
-
-.menu4 {
-	position: fixed;
-	width: 300px;
-	height: 400px;
-	bottom: -500px;
-  left: 500px;
-	background-color: springgreen;
-	transition: all 0.8s;
-  padding: 10px 50px 0 50px;
+  margin-bottom: 20px;
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
-  overflow: scroll;
+  font-size: 30px;
+  font-family: arial unicode ms;
 }
-.clicked .menu4 {
-	bottom: 155px;
+.menus-price{
+  margin: 10px 0 30px 0;
+  padding: 5px 10px 0 10px;
+  background-color: greenyellow;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+  font-family: Impact;
+  font-size: 30px;
 }
+.menu-names{
+  color: #000;
+  text-decoration: none;
+}
+
