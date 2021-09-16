@@ -1,0 +1,2 @@
+module AllsalesHelper
+end

@@ -62,11 +62,11 @@
       <div class="menu_wrapper" id="menu_wrapper2">
         <div class="menu2">
           <div class="menus-all">
-            ゲスト一覧
+            <div class="titllabel">ゲスト一覧</div>
             <% current_user.guests.order("guest_name DESC").each do |guest| %>
             <div class="menus">
               <div class="menus-name2">
-                <%= guest.guest_name %> 
+                <%= guest.guest_name %> <%= link_to '×', guest_path(guest.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
               </div>
             </div>
             <% end %>
@@ -93,7 +93,7 @@
               <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
             </div>
             <div class="chackroom-btn1">
-              <%= link_to '伝票', menus_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
+              <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
             </div>
             <div class="allsale-btn1">
               <%= link_to '売上', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>

@@ -59,7 +59,7 @@
             <% current_user.staffs.order("nickname DESC").each do |staff| %>
             <div class="menus">
               <div class="menus-name2">
-                <%= staff.nickname %> 
+                <%= staff.nickname %> <%= link_to '×', staff_path(staff.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
               </div>
             </div>
             <% end %>
@@ -86,10 +86,10 @@
               <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
             </div>
             <div class="chackroom-btn1">
-              <a href="#" class="chackroombtn1">伝票</a>
+              <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
             </div>
             <div class="allsale-btn1">
-              <a href="#" class="allsalebtn1">売上</a>
+              <%= link_to '売上', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
             </div>
           </div>
         </div>

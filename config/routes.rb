@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :menus
   resources :guests
   resources :staffs
+  resources :checkrooms do
+    resources :checks
+    resources :allsales
+  end
 end

@@ -1,0 +1,65 @@
+<div class="createform5">
+  <div class="createform7">
+    <div class="roomname">
+      <div>
+       <%= @checkrooms.room_name %>
+      </div>
+      <div>
+        <%= @checkrooms.how_many%>名 <%= link_to "×", checkroom_path(@checkrooms), method: :delete %> 
+      </div>
+    </div>
+    <div class="message">
+      <%= render partial: 'check', collection: @checks %>
+    </div>
+  </div>
+
+<%= render "allsales/allsales" %>
+
+  <div class="createform6">
+    <div class="checkcreate">
+    オーダー入力
+      <%= form_with model: [@checkrooms, @check], class: 'form', local: true do |f| %>
+      <div class="menuname10">
+        <%= f.collection_select :menuname, @menus, :menu_name, :menu_name, {include_blank: "ドリンク選択"}, {class:"menuname", id:"ab"} %>
+      </div>
+
+      <div class="cups1">
+        <INPUT type=button value="－" onClick="minus(this.form.gh)">
+        <%= f.text_field :cup,  value: 1, class: 'cups', id: 'gh', size: 4 %>
+        <INPUT type=button value="＋" onClick="plus(this.form.gh)">
+      </div>
+
+      <div class="menuprice10">
+        <%= f.collection_select :menuprice, @menus.select(:price).distinct.order('price'), :price, :price, {include_blank: "金額選択"}, {class: 'menuprice',  id: 'cd', onchange:"myfunc()"} %>
+      </div>
+
+      <div class="menuallprice10">
+        <%= f.text_field :menuallprice, class: 'menuallprice', placeholder: '合計金額', id: 'ef'%>
+      </div>
+
+      <div class="drinkmenu10">
+        <%=f.submit class:"drinkmenu", value: 'オーダー追加' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+      <SCRIPT>
+        function myfunc(){
+          let price = document.getElementById("cd").value;
+          let cup = document.getElementById("gh").value
+          document.getElementById("ef").value = price * cup;
+        }
+      </SCRIPT>
+    
+      <SCRIPT>
+        function plus(chk){
+        chk.value++;
+        if (chk.value==100) {chk.value=99}
+        }
+        function minus(chk){
+        chk.value--;
+        if (chk.value==-1) {chk.value=0}
+        }
+      </SCRIPT>

@@ -1,0 +1,35 @@
+<body>
+<header>
+  <div class="title">
+    Check Create
+  </div>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+  <div class="login">
+    <%= link_to current_user.name, root_path(current_user), data: {"turbolinks" => false}, class: "shop" %>
+  </div>
+</header>
+
+<main>
+
+  <%= render "checks/side_bar" %>
+
+  
+</main>
+
+<footer>
+  <div class="logout">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks" => false}, class: 'out'%>
+  </div>
+</footer>
+</body>
+
+<script>
+  const ham = document.getElementById('ham');
+  const menu_wrapper = document.getElementById('menu_wrapper');
+  ham.addEventListener('click',function() {
+	ham.classList.toggle('clicked');
+	menu_wrapper.classList.toggle('clicked');
+  });
+</script>

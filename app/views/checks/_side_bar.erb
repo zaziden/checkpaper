@@ -1,0 +1,53 @@
+<div class="main5">
+    <div class="menuber5">
+      <div class="ham" id="ham">
+	      <span class="ham_line ham_line1"></span>
+	      <span class="ham_line ham_line2"></span>
+	      <span class="ham_line ham_line3"></span>
+      </div>
+            <div class="checkrooms">
+            <div class="titllabel">伝票一覧</div>
+            <% current_user.checkrooms.order("room_name").each do |checkroom| %>
+              <div class="room-name4">
+                <%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %> 
+              </div>
+            <% end %>
+            </div>
+
+      <div class="menu_wrapper" id="menu_wrapper">
+	      <div class="menu30">
+    	    <%=form_with model: Checkroom.create, local: true do |f|%>
+          <div class='chat-room-form__field'>
+            <div class='chat-room-form__field--left'>
+              <%= f.label 'Guest Name', class: 'menu-label'%>
+            </div>
+            <div class='chat-room-form__field--right'>
+            <% if current_user.id %>
+              <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択",class: 'chat-room-form__input1' %>
+            <% end %>
+            </div>
+          </div>
+          <div class='chat-room-form__field'>
+            <div class='chat-room-form__field--left'>
+              <%= f.label 'How Many People?', class: 'price-label'%>
+            </div>
+            <div class='chat-room-form__field--right'>
+              <%= f.number_field :how_many, step: "1", min: "1",class: 'chat__room_name chat-room-form__input', placeholder: '何名様ですか?' %>
+            </div>
+          </div>
+          <div class='chat-room-form__field5'>
+            <% if current_user.id %>
+            <%= f.collection_select :staff_name, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'chat-room-form__input1' %>
+            <% end %>
+          </div>
+          <div class='chat-room-form__field'>
+            <div class='chat-room-form__field--left'>
+          </div>
+          <div class='chat-room-form__field--right'>
+            <%= f.submit 'Push', class: 'action-btn'%>
+          </div>
+        </div>
+        <% end %>
+	    </div>
+    </div>
+  </div>

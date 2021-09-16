@@ -16,7 +16,7 @@
 	position: fixed;
 	width: 300px;
 	height: 400px;
-	bottom: -500px;
+	bottom: 210px;
   left: 500px;
 	background-color: springgreen;
 	transition: all 0.8s;
@@ -26,7 +26,7 @@
   overflow: scroll;
 }
 .clicked .menu2 {
-	bottom: 155px;
+	bottom: -500px;
 }
 
 .createform2{
@@ -60,7 +60,7 @@
 	position: fixed;
 	width: 300px;
 	height: 400px;
-	right: -400px;
+	right: 30px;
 	background-color: turquoise;
 	transition: all 0.8s;
   padding: 10px 0 0 100px;
@@ -69,7 +69,7 @@
   overflow: scroll;
 }
 .clicked .menu3 {
-	right: 30px;
+	right: -400px;
 }
 .menus-all1{
   padding-top: 3px;

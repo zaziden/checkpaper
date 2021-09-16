@@ -62,14 +62,14 @@
       <div class="menu_wrapper" id="menu_wrapper2">
         <div class="menu4">
           <div class="menus-all">
-            メニュー
+            <div class="titllabel1">メニュー</div>
             <% current_user.menus.order("price").each do |menu| %>
             <div class="menus">
               <div class="menus-name4">
                 <%= menu.menu_name %> 
               </div>
               <div class="menus-name4">
-                ¥<%= menu.price %> 
+                ¥<%= menu.price %> <%= link_to '×', menu_path(menu.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
               </div>
             </div>
             <% end %>
@@ -95,11 +95,11 @@
             <div class="guest-btn1">
               <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
             </div>
-            <div class="chackroom-btn1">
-              <a href="#" class="chackroombtn1">伝票</a>
+             <div class="chackroom-btn1">
+              <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
             </div>
             <div class="allsale-btn1">
-              <a href="#" class="allsalebtn1">売上</a>
+              <%= link_to '売上', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
             </div>
           </div>
         </div>

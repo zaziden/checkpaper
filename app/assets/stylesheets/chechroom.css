@@ -1,0 +1,54 @@
+.main5{
+  display: flex;
+}
+
+.menuber5{
+  padding-right: 300px;
+}
+.chat-room-form__field5{
+  margin: 10px 0;
+}
+.checkrooms{
+  position: fixed;
+  height: 50vh;
+  width: 300px;
+  overflow: scroll;
+  margin-left: 50px;
+  text-align: center;
+  background-color: springgreen;
+  border-radius: 5px;
+  box-shadow: 5px 5px #000;
+}
+.room-name4{
+  margin: 35px 0;
+}
+.room-name5{
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+}
+.titllabel{
+  margin-top: 10px;
+}
+
+.roomname{
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu30 {
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	left: -500px;
+	background-color: greenyellow;
+	transition: all 0.8s;
+  padding: 100px 0 0 100px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.clicked .menu30 {
+	left: 8px;
+}
+
+

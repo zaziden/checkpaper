@@ -16,11 +16,6 @@ p{
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
 }
-.ham:active{
-	box-shadow: none;
-	margin: 25px 20px 20px 20px;
-	opacity: 0.8;
-}
 .ham_line {
 	position: absolute;
 	left: 20px;
@@ -58,7 +53,7 @@ p{
 	position: fixed;
 	width: 300px;
 	height: 300px;
-	left: -500px;
+	left: 8px;
 	background-color: greenyellow;
 	transition: all 0.8s;
   padding: 100px 0 0 100px;
@@ -94,7 +89,7 @@ p{
   opacity: 0.8;
 }
 
-/*メニュー一覧*/
+/*ゲスト一覧*/
 .createform{
   height: calc(100vh - 222px);
   width: 100%;
