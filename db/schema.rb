@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_074955) do
 
   create_table "allsales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "allprice"
+    t.string "checkstaff"
     t.bigint "checkroom_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

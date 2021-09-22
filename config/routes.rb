@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :staffs
   resources :checkrooms do
     resources :checks
-    resources :allsales
+    resources :allsales 
+  end
+  resources :allsales do
+    collection do
+      get 'search'
+    end
   end
 end
