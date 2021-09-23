@@ -1,4 +1,5 @@
 class CheckroomsController < ApplicationController
+
   def index
     @checkroom = Checkroom.new
     @guest = Guest.where(user_id: current_user.id)
@@ -15,6 +16,7 @@ class CheckroomsController < ApplicationController
       flash[:notice] = "伝票を作成しました"
       redirect_to checkrooms_path(current_user.id)
     else
+      flash[:notice] = "入力項目が不足しています"
       render :index
     end
   end
@@ -31,4 +33,5 @@ class CheckroomsController < ApplicationController
   def checkroom_params
     params.require(:checkroom).permit(:room_name, :how_many, :staff_name).merge(user_id: current_user.id)
   end
+
 end

@@ -13,6 +13,7 @@ class GuestsController < ApplicationController
       flash[:notice] = "ゲストを登録しました"
       redirect_to guests_path(current_user.id)
     else
+      flash[:notice] = "入力項目が不足しています"
       render :index
     end
   end

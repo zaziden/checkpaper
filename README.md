@@ -1,5 +1,30 @@
 # README
 
+## アプリケーション名
+* checkpaper
+
+## アプリケーション概要
+* 主に飲食店の売上計算やデジタル伝票としてお使いいただけます。
+
+## テスト用アカウント
+* 
+
+## 利用方法
+* 
+
+## 目指した課題解決
+* ノートや紙伝票で管理していた売上やオーダーなどを、パソコン1台で簡単に管理できる事を目指しました。
+
+## 洗い出した要件
+* 
+
+## 実装予定の機能
+* 経費の管理機能
+* タブレットやスマフォでも使用可能に実装
+
+## ローカルでの動作方法
+* 
+
 # テーブル設計
 
 ## users テーブル（ショップ）
@@ -16,6 +41,7 @@
 * has_many :staffs
 * has_many :checkrooms
 * has_many :checks
+* has_many :allsales
 
 ## guests テーブル（客情報）
 
@@ -59,12 +85,13 @@
 ### Association
 * belongs_to :user
 * has_one :check
+* has_one :allsale
 
 ## checks テーブル（注文）
 
 | Column      | Type       | Options                        |
 | ------------| ---------- | -------------------------------|
-| room        | references | null: false, foreign_key: true |
+| checkroom   | references | null: false, foreign_key: true |
 | user        | references | null: false, foreign_key: true |
 | menuname    | string     | null: false                    |
 | menuprice   | integer    | null: false                    |
@@ -72,5 +99,18 @@
 
 ### Association
 * belongs_to :user
-* belongs_to :room
+* belongs_to :checkroom
+
+## allsales テーブル（精算金額）
+
+| Column      | Type       | Options                        |
+| ------------| ---------- | -------------------------------|
+| checkroom   | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
+| allprice    | integer    | null: false                    |
+| checkstaff  | string     | null: false                    |
+
+### Association
+* belongs_to :user
+* belongs_to :checkroom
 

@@ -51,3 +51,39 @@
   margin-left: 25%;
   border-radius: 5px;
 }
+
+/*検索結果*/
+.searchall1{
+  padding: 30px;
+}
+.searchall{
+  font-size: 50px;
+}
+.top{
+  font-size: 40px;
+}
+
+/*トップメニュー*/
+.ham30 {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background-color: greenyellow;
+  margin: 0 20px 20px 20px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.menu30 {
+	position: fixed;
+	width: 300px;
+	height: 300px;
+	left: -500px;
+	background-color: greenyellow;
+	transition: all 0.8s;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.clicked .menu30 {
+	left: 8px;
+}

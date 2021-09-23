@@ -13,6 +13,7 @@ class MenusController < ApplicationController
       flash[:notice] = "メニューを登録しました"
       redirect_to menus_path(current_user.id)
     else
+      flash[:notice] = "入力項目が不足しています"
       render :index
     end
   end

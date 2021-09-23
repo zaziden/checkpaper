@@ -32,6 +32,33 @@
   </div>
 </header>
 <main>
+  <div class="menuber">
+    <div class="ham30" id="ham">
+	    <span class="ham_line ham_line1"></span>
+	    <span class="ham_line ham_line2"></span>
+	    <span class="ham_line ham_line3"></span>
+    </div>
+
+    <div class="menu_wrapper" id="menu_wrapper">
+	    <div class="menu30">
+    	  <div class="menus-all1">
+          トップメニュー
+          <div class="menu-btn1">
+            <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
+          </div>
+          <div class="guest-btn1">
+            <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
+          </div>
+          <div class="chackroom-btn1">
+            <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
+          </div>
+          <div class="allsale-btn1">
+            <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
+          </div>
+        </div>
+	    </div>
+    </div>
+  </div>
   <div class="search">
     <div class="wa">売上検索</div>
       <%= search_form_for @q, url: search_allsales_path do |f| %>
@@ -54,3 +81,12 @@
   </div>
 </footer>
 </body>
+
+<script>
+  const ham = document.getElementById('ham');
+  const menu_wrapper = document.getElementById('menu_wrapper');
+  ham.addEventListener('click',function() {
+	ham.classList.toggle('clicked');
+	menu_wrapper.classList.toggle('clicked');
+  });
+</script>

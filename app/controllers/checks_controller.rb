@@ -9,6 +9,9 @@ class ChecksController < ApplicationController
     @checkrooms = Checkroom.find(params[:checkroom_id])
     @checks = @checkrooms.checks.includes(:user)
     @allsales = Check.where(checkroom_id: params[:checkroom_id]).sum(:menuallprice)
+    unless current_user.id == @checkrooms.user_id
+      redirect_to root_path(current_user.id)
+    end
   end
 
   def create
@@ -17,6 +20,7 @@ class ChecksController < ApplicationController
     if @check.save
       redirect_to checkroom_checks_path(@checkrooms)
     else
+      flash[:notice] = "入力項目が不足しています"
       @checks = @checkrooms.checks.includes(:user)
       render :index
     end
@@ -27,4 +31,5 @@ class ChecksController < ApplicationController
   def check_params
     params.require(:check).permit(:menuname, :menuprice, :menuallprice, :cup).merge(user_id: current_user.id)
   end
+
 end
