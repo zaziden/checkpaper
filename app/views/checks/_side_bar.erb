@@ -16,6 +16,7 @@
 
       <div class="menu_wrapper" id="menu_wrapper">
 	      <div class="menu30">
+        伝票作成
     	    <%=form_with model: Checkroom.create, local: true do |f|%>
           <div class='chat-room-form__field'>
             <div class='chat-room-form__field--left'>
@@ -23,7 +24,7 @@
             </div>
             <div class='chat-room-form__field--right'>
             <% if current_user.id %>
-              <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択",class: 'chat-room-form__input1' %>
+              <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択",class: 'chat-room-form__input1' %><%= link_to 'ゲスト登録へ移動', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
             <% end %>
             </div>
           </div>

@@ -20,9 +20,9 @@
     オーダー入力
       <%= form_with model: [@checkrooms, @check], class: 'form', local: true do |f| %>
       <div class="menuname10">
-        <%= f.collection_select :menuname, @menus, :menu_name, :menu_name, {include_blank: "ドリンク選択"}, {class:"menuname", id:"ab"} %>
+        <%= f.collection_select :menuname, @menus, :menu_name, :menu_name, {include_blank: "メニュー選択"}, {class:"menuname", id:"ab"} %>
       </div>
-
+<%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
       <div class="cups1">
         <INPUT type=button value="－" onClick="minus(this.form.gh)">
         <%= f.text_field :cup,  value: 1, class: 'cups', id: 'gh', size: 4 %>

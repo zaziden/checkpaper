@@ -6,33 +6,30 @@
 <div class="todays">
   <div class="today" id="view_clock"></div>
 </div>
-<script type="text/javascript">
-  timerID = setInterval('clock()',500); //0.5秒毎にclock()を実行
-
-  function clock() {
-	document.getElementById("view_clock").innerHTML = getNow();
-  }
-
-  function getNow() {
-	var now = new Date();
-	var year = now.getFullYear();
-	var mon = now.getMonth()+1; //１を足すこと
-	var day = now.getDate();
-	var hour = now.getHours();
-	var min = now.getMinutes();
-	var sec = now.getSeconds();
-
-	//出力用
-	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
-	return s;
-  }
-</script>
   <div class="login">
     <%= link_to current_user.name, root_path(current_user), class: "shop" %>
   </div>
 </header>
 <main>
   <div class="searchall1">
+    <div class="searchall30">
+      <% @results.each do |allsale| %>
+      <div class="search1">
+        <div class="searchday">
+          <%= allsale.created_at.strftime('%Y/%m/%d') %>
+        </div>
+        <div class="searchstaff">
+          <%= allsale.checkstaff%>
+        </div>
+        <div class="searchguest">
+          <%= allsale.checkguest%>
+        </div>
+        <div class="searchallprice">
+          ¥<%= allsale.allprice%>
+        </div>
+      </div>
+      <% end %>
+    </div>
     <div class="searchall">
       ¥<%= @results.sum(:allprice) %>
     </div>

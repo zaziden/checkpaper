@@ -53,7 +53,31 @@
 }
 
 /*検索結果*/
+.searchall30{
+  height: 70%;
+  overflow: scroll;
+}
+.search1{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.searchday{
+  width: 25%;
+  
+}
+.searchstaff{
+  width: 25%;
+  
+}
+.searchguest{
+  width: 25%;
+}
+.searchallprice{
+  width: 25%;
+}
 .searchall1{
+  height: 100%;
   padding: 30px;
 }
 .searchall{
@@ -63,7 +87,11 @@
   font-size: 40px;
 }
 
+
 /*トップメニュー*/
+.main30{
+  display: flex;
+}
 .ham30 {
 	position: relative;
 	width: 60px;
@@ -76,6 +104,7 @@
 }
 .menu30 {
 	position: fixed;
+  position: relative;
 	width: 300px;
 	height: 300px;
 	left: -500px;
@@ -86,4 +115,11 @@
 }
 .clicked .menu30 {
 	left: 8px;
+}
+.menus-all30{
+  position: absolute;
+  top: 50px;
+}
+.menuber30{
+  padding-top: 10px;
 }

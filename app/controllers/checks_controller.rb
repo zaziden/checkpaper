@@ -21,8 +21,7 @@ class ChecksController < ApplicationController
       redirect_to checkroom_checks_path(@checkrooms)
     else
       flash[:notice] = "入力項目が不足しています"
-      @checks = @checkrooms.checks.includes(:user)
-      render :index
+      redirect_to checkroom_checks_path(@checkrooms)
     end
   end
 

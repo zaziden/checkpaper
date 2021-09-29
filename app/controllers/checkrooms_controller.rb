@@ -1,13 +1,12 @@
 class CheckroomsController < ApplicationController
+  before_action :checkroom_new, only: [:index, :new]
 
   def index
-    @checkroom = Checkroom.new
     @guest = Guest.where(user_id: current_user.id)
     @staff = Staff.where(user_id: current_user.id)
   end
 
   def new
-    @checkroom = Checkroom.new
   end
 
   def create
@@ -17,7 +16,7 @@ class CheckroomsController < ApplicationController
       redirect_to checkrooms_path(current_user.id)
     else
       flash[:notice] = "入力項目が不足しています"
-      render :index
+      redirect_to checkrooms_path(current_user.id)
     end
   end
 
@@ -29,6 +28,10 @@ class CheckroomsController < ApplicationController
   end
 
   private
+
+  def checkroom_new
+    @checkroom = Checkroom.new
+  end
 
   def checkroom_params
     params.require(:checkroom).permit(:room_name, :how_many, :staff_name).merge(user_id: current_user.id)

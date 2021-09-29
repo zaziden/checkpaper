@@ -8,16 +8,17 @@
   </div>
 </header>
 <main>
-  <div class="menuber">
+<div class="main30">
+  <div class="menuber30">
     <div class="ham30" id="ham">
 	    <span class="ham_line ham_line1"></span>
 	    <span class="ham_line ham_line2"></span>
 	    <span class="ham_line ham_line3"></span>
     </div>
 
-    <div class="menu_wrapper" id="menu_wrapper">
+    <div class="menu_wrapper30" id="menu_wrapper">
 	    <div class="menu30">
-    	  <div class="menus-all1">
+    	  <div class="menus-all30">
           トップメニュー
           <div class="menu-btn1">
             <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
@@ -45,11 +46,15 @@
         <div class="wc">
           <%= f.collection_select :checkstaff_eq, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'wf' %>
         </div>
+        <div class="wc">
+          <%= f.collection_select :checkguest_eq, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択", class: 'wf' %>
+        </div>
         <div class="wd">
           <%= f.submit '検索' %>
         </div>
       <% end %>
   </div>
+</div>
 </main>
 <footer>
   <div class="logout">
