@@ -34,8 +34,10 @@ header{
 
 /*メイン*/
 main{
+	height: 100%;
+}
+.maintop{
 	height: calc(100vh - 200px);
-	
 }
 
 .imag{

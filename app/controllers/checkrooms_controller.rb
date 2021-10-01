@@ -15,7 +15,7 @@ class CheckroomsController < ApplicationController
       flash[:notice] = "伝票を作成しました"
       redirect_to checkrooms_path(current_user.id)
     else
-      flash[:notice] = "入力項目が不足しています"
+      flash[:notice] = "入力項目に誤りがあります"
       redirect_to checkrooms_path(current_user.id)
     end
   end

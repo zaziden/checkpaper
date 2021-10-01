@@ -20,7 +20,7 @@ class ChecksController < ApplicationController
     if @check.save
       redirect_to checkroom_checks_path(@checkrooms)
     else
-      flash[:notice] = "入力項目が不足しています"
+      flash[:notice] = "入力項目に誤りがあります"
       redirect_to checkroom_checks_path(@checkrooms)
     end
   end

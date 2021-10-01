@@ -1,3 +1,4 @@
+/*注文済リスト*/
 .allcheck{
   display: flex;
   align-items: center;
@@ -23,29 +24,97 @@
 /*検索*/
 .search{
   width: 100%;
-  height: calc(100% - 150px);
-  padding: 30px 0 0 0;
+  height: 100%;
+  padding: 5% 0 0 0;
 }
 .wa{
-  font-size: 50px;
-  margin: 0px 30px 50px 25%;
+  font-size: 200%;
+  margin: 0 0 3% 25%;
   width: 300px;
 }
 .wb{
   margin-left: 25%;
-  margin-bottom: 50px;
-  font-size: 30px;
+  margin-bottom: 5%;
+  font-size: 200%;
   
 }
 .wc{
   margin-left: 25%;
-  margin-bottom: 50px;
-  font-size: 30px;
+  margin-bottom: 5%;
+  font-size: 200%;
 }
 .wd{
-  font-size: 40px;
-  margin-left: 25%;
+  font-size: 200%;
+  margin: 0 0 5% 25%;
   border-radius: 5px;
+}
+
+/*トップメニュー*/
+.main30{
+  display: flex;
+}
+.ham30 {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	background-color: greenyellow;
+  margin: 0 20px 20px 20px;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.ham_line {
+	position: absolute;
+	left: 20px;
+	width: 20px;
+	height: 5px;
+	background-color: #333333;
+}
+.ham_line1 {
+	top: 18px;
+}
+.ham_line2 {
+	top: 26px;
+}
+.ham_line3 {
+	top: 34px;
+}
+
+.ham_line {
+	transition: all 0.3s;
+}
+
+.clicked .ham_line1 {
+	transform: rotate(45deg);
+	top: 26px;
+}
+.clicked .ham_line2 {
+	width: 0px;
+}
+.clicked .ham_line3 {
+	transform: rotate(-45deg);
+	top: 26px;
+}
+.menu30 {
+	position: fixed;
+  position: relative;
+	width: 300px;
+	height: 300px;
+	left: -500px;
+	background-color: greenyellow;
+	transition: all 0.8s;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.clicked .menu30 {
+	left: 8px;
+}
+.menus-all30{
+  position: absolute;
+  top: 50px;
+}
+.menuber30{
+  padding-top: 10px;
 }
 
 /*検索結果*/
@@ -81,41 +150,4 @@
 }
 .top{
   font-size: 40px;
-}
-
-
-/*トップメニュー*/
-.main30{
-  display: flex;
-}
-.ham30 {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	background-color: greenyellow;
-  margin: 0 20px 20px 20px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.menu30 {
-	position: fixed;
-  position: relative;
-	width: 300px;
-	height: 300px;
-	left: -500px;
-	background-color: greenyellow;
-	transition: all 0.8s;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.clicked .menu30 {
-	left: 8px;
-}
-.menus-all30{
-  position: absolute;
-  top: 50px;
-}
-.menuber30{
-  padding-top: 10px;
 }
