@@ -54,7 +54,7 @@
             <div class="menu_list">
               <%= menu.menu_name %>
             </div>
-            <div class="menu_list">
+            <div class="menu_list_price">
               ¥<%= menu.price %> <%= link_to '×', menu_path(menu.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
             </div>
           </div>

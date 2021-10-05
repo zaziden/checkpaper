@@ -1,54 +1,96 @@
-.main5{
-  display: flex;
+/*伝票サイドバー*/
+.maintop2{
+  height: calc(100vh - 200px);
+  width: 33%;
+}
+.check_lists{
+  width: 100%;
+  height: 100%;
 }
 
-.menuber5{
-  padding-right: 300px;
-}
-.chat-room-form__field5{
-  margin: 10px 0;
-}
-.checkrooms{
-  position: fixed;
-  height: 50vh;
-  width: 300px;
-  overflow: scroll;
-  margin-left: 50px;
-  text-align: center;
-  background-color: springgreen;
-  border-radius: 5px;
-  box-shadow: 5px 5px #000;
-}
-.room-name4{
-  margin: 35px 0;
-}
-.room-name5{
-  font-size: 30px;
-  text-decoration: none;
-  color: #000;
-}
-.titllabel{
-  margin-top: 10px;
-}
-
-.roomname{
-  display: flex;
-  justify-content: space-around;
-}
-
-.menu30 {
-	position: fixed;
-	width: 300px;
-	height: 300px;
-	left: -500px;
+.ham {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
 	background-color: greenyellow;
-	transition: all 0.8s;
-  padding: 100px 0 0 100px;
+  margin: 20px;
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
 }
-.clicked .menu30 {
-	left: 8px;
+.ham_line {
+	position: absolute;
+	left: 20px;
+	width: 20px;
+	height: 5px;
+	background-color: #333333;
+}
+.ham_line1 {
+	top: 18px;
+}
+.ham_line2 {
+	top: 26px;
+}
+.ham_line3 {
+	top: 34px;
 }
 
+.ham_line {
+	transition: all 0.3s;
+}
+.clicked .ham_line1 {
+	transform: rotate(45deg);
+	top: 26px;
+}
+.clicked .ham_line2 {
+	width: 0px;
+}
+.clicked .ham_line3 {
+	transform: rotate(-45deg);
+	top: 26px;
+}
 
+.check_list{
+  height: 60%;
+  position: relative;
+  overflow: scroll;
+}
+.check_list_names{
+  position: absolute;
+  top: 30px;
+  left: 35%;
+}
+.check_list_name{
+  margin-bottom: 30px;
+}
+.room-name5{
+  font-size: 2vw;
+  text-decoration: none;
+  color: #000;
+}
+
+.menu_create{
+	position: fixed;
+	width: 400px;
+	height: 400px;
+	left: -500px;
+  top: 200px;
+	background-color: greenyellow;
+	transition: all 0.8s;
+  border-radius: 5px;
+	box-shadow: 5px 5px #000;
+}
+.clicked .menu_create{
+	left: 100px;
+}
+.create_form{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+.check_list_form1{
+  padding-bottom: 10px;
+}
+.check_list_link{
+  padding-bottom: 10px;
+}

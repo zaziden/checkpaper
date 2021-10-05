@@ -1,24 +1,16 @@
-/*注文済リスト*/
+/*合計*/
 .allcheck{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: fixed;
-  height: 11%;
-  width: 30.6%;
-  background-color:hotpink;
-  border-radius: 5px;
-  box-shadow: 5px 5px #000;
-  margin: 500px 0 0 0;
 }
-
 .alls{
   text-align: right;
-  padding: 0 10px;
-  font-size: 20px;
+  font-size: 1.5vw;
 }
 .o{
-  padding: 4px 10px;
+  font-size: 1.5vw;
+  cursor: pointer;
 }
 
 /*検索*/

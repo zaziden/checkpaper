@@ -1,75 +1,73 @@
-.createform5{
-  height: calc(100vh - 222px);
-  width: 100%;
-  padding: 20px 50px 0px 50px;
-  
+.maintop3{
   display: flex;
 }
-.createform6{
-  height: 70vh;
-  width: 50%;
-  margin: 45px 0 0 60px;
+.maintop4{
+  height: calc(100vh - 200px);
+  width: 77%;
+  display: flex;
 }
-.createform7{
-  height: 60vh;
+/*伝票中*/
+.check_room_show{
   width: 50%;
-  background-color: hotpink;
-  border-radius: 5px;
-  box-shadow: 5px 5px #000;
+  height: 100%;
+}
+.check_room_names{
+  display: flex;
+  justify-content: space-around;
+  font-size: 2vw;
+  border-bottom: 1px solid black;
+}
+.message1{
   overflow: scroll;
+  height: 65%;
 }
 
-.roomname{
-  font-size: 30px;
+/*伝票右*/
+.check_create{
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.check_create_form{
   text-align: center;
-  margin: 20px 0;
-  color: #000;
+  position: absolute;
+  top: 30%;
+  left: 25%;
 }
-
-.checkcreate{
-  height: 49vh;
-  width: 30vw;
-  background-color: lime;
-  margin: 35px 0 0 0;
-  padding-top: 10px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 5px 5px #000;
+.check_create_form1{
+  margin: 0 0 20px 0;
+  font-size: 1.5vw;
 }
-
+.check_create_form2{
+  margin: 0 0 20px 0;
+  font-size: 1.5vw;
+}
+.check_create_form3{
+  margin: 0 0 20px 0;
+  font-size: 1.5vw;
+}
+.check_create_link{
+  margin-bottom: 15px;
+}
+.check_create_count{
+  font-size: 1.5vw;
+  margin-bottom: 15px;
+}
 .menuname{
-  width: 20vw;
-  height: 5vh;
-  margin: 10px 0;
+  width: 90%;
+  text-align: center;
 }
-
-.menuprice{
-  width: 20vw;
-  height: 5vh;
-  margin: 30px 0;
-}
-
 .menuallprice{
-  width: 20vw;
-  height: 5vh;
-  margin: 0 0 30px 0;
+  width: 90%;
+  text-align: center;
 }
-
+.menuprice{
+  text-align: center;
+  width: 90%;
+}
 .drinkmenu{
-  width: 15vw;
-  height: 5vh;
-  margin: 0 0 30px 0;
-}
-.cups1{
-  font-size: 150%;
+  cursor: pointer;
 }
 .cups{
   text-align: right;
 }
-
-.oaiso{
-  height: 20vh;
-  width: 50%;
-  background-color: sienna;
-}
-

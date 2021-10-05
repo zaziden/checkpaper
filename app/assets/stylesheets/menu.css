@@ -1,3 +1,4 @@
+/*左、右はstaff.cssと同じ*/
 /*中*/
 .list_menu{
   height: 100%;
@@ -9,8 +10,9 @@
   overflow: scroll;
 }
 .menu_lists{
+  width: 80%;
   top: 20%;
-  left: 20%;
+  left: 40px;
   position: absolute;
 }
 .menu_block{
@@ -18,6 +20,10 @@
   justify-content: space-between;
 }
 .menu_list{
+  font-size: 1.5vw;
+  margin-bottom: 20px;
+}
+.menu_list_price{
   font-size: 1.5vw;
   margin-bottom: 20px;
 }

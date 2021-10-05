@@ -1,54 +1,69 @@
-<div class="main5">
-    <div class="menuber5">
-      <div class="ham" id="ham">
-	      <span class="ham_line ham_line1"></span>
-	      <span class="ham_line ham_line2"></span>
-	      <span class="ham_line ham_line3"></span>
-      </div>
-            <div class="checkrooms">
-            <div class="titllabel">伝票一覧</div>
-            <% current_user.checkrooms.order("room_name").each do |checkroom| %>
-              <div class="room-name4">
-                <%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %> 
-              </div>
-            <% end %>
-            </div>
+<div class="maintop2">
+  <div class="check_lists">
+    <div class="title_a">
+      伝票リスト
+    </div>
 
-      <div class="menu_wrapper" id="menu_wrapper">
-	      <div class="menu30">
-        伝票作成
-    	    <%=form_with model: Checkroom.create, local: true do |f|%>
-          <div class='chat-room-form__field'>
-            <div class='chat-room-form__field--left'>
-              <%= f.label 'Guest Name', class: 'menu-label'%>
-            </div>
-            <div class='chat-room-form__field--right'>
+    <div class="ham" id="ham">
+	    <span class="ham_line ham_line1"></span>
+	    <span class="ham_line ham_line2"></span>
+	    <span class="ham_line ham_line3"></span>
+    </div>
+
+    <div class="check_list">
+      <div class="check_list_names">
+        <% current_user.checkrooms.order("room_name").each do |checkroom| %>
+          <div class="check_list_name">
+            <%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %>
+          </div>
+        <% end %> 
+      </div>
+    </div>
+
+    <div class="menu_wrapper30" id="menu_wrapper">
+      <div class="menu_create">
+        <div class="title_a">
+          伝票作成
+        </div>
+        <div class="create_form">
+        <%=form_with model: Checkroom.create, local: true do |f|%>
+          <div class="check_list_label">
+            <%= f.label 'Guest Name', class: 'menu-label'%>
+          </div>
+          <div class="check_list_form1">
             <% if current_user.id %>
-              <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択",class: 'chat-room-form__input1' %><%= link_to 'ゲスト登録へ移動', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
+              <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択",class: 'chat-room-form__input1' %>
             <% end %>
-            </div>
           </div>
-          <div class='chat-room-form__field'>
-            <div class='chat-room-form__field--left'>
-              <%= f.label 'How Many People?', class: 'price-label'%>
-            </div>
-            <div class='chat-room-form__field--right'>
-              <%= f.number_field :how_many, step: "1", min: "1",class: 'chat__room_name chat-room-form__input', placeholder: '何名様ですか?' %>
-            </div>
+          <div class="check_list_link">
+            <%= link_to 'ゲスト登録へ移動', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %> 
           </div>
-          <div class='chat-room-form__field5'>
+          <div class="check_list_label">
+            <%= f.label 'How Many People?', class: 'price-label'%>
+          </div>
+          <div class="check_list_form1">
+            <%= f.number_field :how_many, step: "1", min: "1",class: 'chat__room_name chat-room-form__input', placeholder: '何名様ですか?' %>
+          </div>
+          <div class="check_list_form1">
             <% if current_user.id %>
-            <%= f.collection_select :staff_name, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'chat-room-form__input1' %>
+              <%= f.collection_select :staff_name, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'chat-room-form__input1' %>
             <% end %>
           </div>
-          <div class='chat-room-form__field'>
-            <div class='chat-room-form__field--left'>
-          </div>
-          <div class='chat-room-form__field--right'>
+          <div class="form_staff_btn">
             <%= f.submit 'Push', class: 'action-btn'%>
           </div>
-        </div>
         <% end %>
-	    </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<script>
+  const ham = document.getElementById('ham');
+  const menu_wrapper = document.getElementById('menu_wrapper');
+  ham.addEventListener('click',function() {
+	ham.classList.toggle('clicked');
+	menu_wrapper.classList.toggle('clicked');
+  });
+</script>
