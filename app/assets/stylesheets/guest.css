@@ -54,27 +54,7 @@ p{
 .chat-room-form__field--left{
   padding-bottom: 5px;
 }
-.menu-label{
-  font-family: Impact;
-  font-size: 20px;
-}
 
-.chat-room-form__field--right{
-  padding-bottom: 10px;
-}
-.price-label{
-  font-family: Impact;
-  font-size: 20px;
-}
-
-.action-btn{
-  font-family: Impact;
-  font-size: 20px;
-  cursor: pointer;
-}
-.action-btn:active{
-  opacity: 0.8;
-}
 
 /*ゲスト一覧*/
 .createform{

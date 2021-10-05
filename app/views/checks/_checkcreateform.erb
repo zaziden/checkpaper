@@ -40,6 +40,7 @@
       <div class="drinkmenu10">
         <%=f.submit class:"drinkmenu", value: 'オーダー追加' %>
       </div>
+      <%= render 'layouts/error_messages', model: f.object %>
       <% end %>
     </div>
   </div>

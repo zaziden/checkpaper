@@ -1,135 +1,23 @@
-.main{
-  display: flex;
-  justify-content: space-around;
+/*中*/
+.list_menu{
+  height: 100%;
+  width: 33%;
 }
-/*ハンバーガーメニュー*/
-.ham {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	background-color: greenyellow;
-  margin: 20px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.ham_line {
-	position: absolute;
-	left: 20px;
-	width: 20px;
-	height: 5px;
-	background-color: #333333;
-}
-.ham_line1 {
-	top: 18px;
-}
-.ham_line2 {
-	top: 26px;
-}
-.ham_line3 {
-	top: 34px;
-}
-
-.ham_line {
-	transition: all 0.3s;
-}
-
-.clicked .ham_line1 {
-	transform: rotate(45deg);
-	top: 26px;
-}
-.clicked .ham_line2 {
-	width: 0px;
-}
-.clicked .ham_line3 {
-	transform: rotate(-45deg);
-	top: 26px;
-}
-
-.menu {
-	position: fixed;
-	width: 300px;
-	height: 300px;
-	left: 8px;
-	background-color: greenyellow;
-	transition: all 0.8s;
-  padding: 100px 0 0 100px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.clicked .menu {
-	left: -500px;
-}
-
-.chat-room-form__field--left{
-  padding-bottom: 5px;
-}
-.menu-label{
-  font-family: Impact;
-  font-size: 20px;
-}
-
-.chat-room-form__field--right{
-  padding-bottom: 10px;
-}
-.price-label{
-  font-family: Impact;
-  font-size: 20px;
-}
-
-.action-btn{
-  padding: 0 3px;
-  font-family: Impact;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 5px;
-	box-shadow: 2px 2px #000;
-}
-
-/*メニュー一覧*/
-.createform{
-  height: calc(100vh - 222px);
-  width: 100%;
-  margin: 0 0 0 20%;
-  padding: 20px 50px 0px 50px;
+.list_menu_list{
+  height: 68%;
+  position: relative;
   overflow: scroll;
 }
-
-.menus{
+.menu_lists{
+  top: 20%;
+  left: 20%;
+  position: absolute;
+}
+.menu_block{
   display: flex;
   justify-content: space-between;
 }
-.menus-name4{
-  color: #000;
-  text-decoration: none;
-  padding: 10px;
-  margin: 25px 0;
-  font-size: 20px;
-  font-family: arial unicode ms;
-}
-.menus-price4{
-  margin: 10px 0 30px 0;
-  padding: 5px 10px 0 10px;
-  font-family: Impact;
-  font-size: 20px;
-}
-
-.menu4 {
-	position: fixed;
-	width: 300px;
-	height: 400px;
-	bottom: 210px;
-  left: 500px;
-	background-color: springgreen;
-	transition: all 0.8s;
-  padding: 10px 50px 0 50px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-  overflow: scroll;
-}
-.clicked .menu4 {
-	bottom: -500px;
-}
-.titllabel1{
-  margin-left: 40%;
+.menu_list{
+  font-size: 1.5vw;
+  margin-bottom: 20px;
 }

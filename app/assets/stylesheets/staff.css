@@ -1,111 +1,76 @@
-.ham2 {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	background-color: springgreen;
-  margin: 20px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.menus-all h1{
-  position: fixed;
-  background-color: springgreen;
-}
-.menu2 {
-	position: fixed;
-	width: 300px;
-	height: 400px;
-	bottom: 210px;
-  left: 500px;
-	background-color: springgreen;
-	transition: all 0.8s;
-  padding: 10px 0 0 100px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-  overflow: scroll;
-}
-.clicked .menu2 {
-	bottom: -500px;
+/**/
+.maintop1{
+	height: calc(100vh - 200px);
+  display: flex;
+  justify-content: space-around;
 }
 
-.createform2{
-  height: calc(100vh - 222px);
-  width: 100%;
-  margin: 0 0 0 20%;
-  padding: 3px 50px 0px 50px;
-  overflow: scroll;
+/*左*/
+.form_staff{
+  height: 100%;
+  width: 33%;
+}
+.title_a{
+  height: 10%;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 100%;
+}
+.form_staff_create_form{
+  height: 90%;
+  position: relative;
+}
+.form_staff_create_area{
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+.form_staff_text{
+  margin: 10px 0 20px 0;
+}
+.form_staff_btn{
+  margin-bottom: 20px;
 }
 
-.menus-name2{
-  font-size: 30px;
-  margin: 30px 0 10px 0;
+/*中*/
+.list_staff{
+  height: 100%;
+  width: 33%;
 }
-
-.createform3{
-  height: calc(100vh - 222px);
-  width: 110%;
-}
-.ham3 {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	background-color: turquoise;
-  margin: 20px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.menu3 {
-	position: fixed;
-	width: 300px;
-	height: 400px;
-	right: 30px;
-	background-color: turquoise;
-	transition: all 0.8s;
-  padding: 10px 0 0 100px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
+.list_staff_list{
+  height: 68%;
+  position: relative;
   overflow: scroll;
 }
-.clicked .menu3 {
-	right: -400px;
+.staff_lists{
+  top: 20%;
+  left: 30%;
+  position: absolute;
 }
-.menus-all1{
-  padding-top: 3px;
+.staff_list{
+  font-size: 3vw;
+  margin-bottom: 10px;
 }
-.menu-btn1{
-  padding: 20px 0;
-  font-size: 30px;
+
+/*右*/
+.main_menu{
+  height: 100%;
+  width: 33%;
+}
+.top_menu_lists{
+  height: 80%;
+  position: relative;
+}
+.top_memu_list{
+  top: 20%;
+  left: 35%;
+  position: absolute;
+}
+.top_memu_list li{
+  font-size: 3vw;
+  margin-bottom: 10px;
 }
 .menubtn1{
   text-decoration: none;
 }
-.guest-btn1{
-  padding: 0 0 20px 0;
-  font-size: 30px;
-}
-.guestbtn1{
-  text-decoration: none;
-}
-.staffbtn1{
-  text-decoration: none;
-}
-.staff-btn1{
-  padding: 0 0 20px 0;
-  font-size: 30px;
-}
-.chackroombtn1{
-  text-decoration: none;
-}
-.chackroom-btn1{
-  padding: 0 0 20px 0;
-  font-size: 30px;
-}
-.allsalebtn1{
-  text-decoration: none;
-}
-.allsale-btn1{
-  padding: 0 0 20px 0;
-  font-size: 30px;
-}
+

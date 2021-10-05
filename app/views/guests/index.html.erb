@@ -12,93 +12,64 @@
 </header>
 
 <main>
-  <div class="main">
-    <div class="menuber">
-      <div class="ham" id="ham">
-	      <span class="ham_line ham_line1"></span>
-	      <span class="ham_line ham_line2"></span>
-	      <span class="ham_line ham_line3"></span>
+  <div class="maintop1">
+    <div class="form_staff">
+      <div class="title_a">
+        ゲスト登録
       </div>
-
-      <div class="menu_wrapper" id="menu_wrapper">
-	      <div class="menu">
-    	    <%=form_with model: @guest, local: true do |f|%>
-          <div class='chat-room-form__field'>
-            <div class='chat-room-form__field--left'>
-              <%= f.label 'Guest Name', class: 'menu-label'%>
-            </div>
-            <div class='chat-room-form__field--right'>
-              <%= f.text_field :guest_name, class: 'chat__room_name chat-room-form__input', placeholder: 'お客様名を入力'%>
-            </div>
+      <div class="form_staff_create_form">
+        <div class="form_staff_create_area">
+          <%=form_with model: @guest, local: true do |f|%>
+          <div class="form_staff_label">
+            <%= f.label 'Guest Name', class: 'menu-label'%>
           </div>
-          <div class='chat-room-form__field'>
-          <div class='chat-room-form__field--left'>
+          <div class="form_staff_text">
+            <%= f.text_field :guest_name, placeholder: 'お客様名を入力'%>
+          </div>
+          <div class="form_staff_label">
             <%= f.label 'Gender', class: 'price-label'%>
           </div>
-          <div class='chat-room-form__field--right'>
-            <%= f.select :gender, {'男性': 1, '女性': 2, 'その他': 3}, { include_blank: '性別選択'}, { class: 'chat__room_name chat-room-form__input' } %>
+          <div class="form_staff_text">
+             <%= f.select :gender, {'男性': 1, '女性': 2, 'その他': 3}, { include_blank: '性別選択'}, { class: 'chat__room_name chat-room-form__input' } %>
           </div>
-        </div>
-        <div class='chat-room-form__field'>
-        </div>
-        <div class='chat-room-form__field'>
-          <div class='chat-room-form__field--left'></div>
-          <div class='chat-room-form__field--right'>
+          <div class="form_staff_btn">
             <%= f.submit 'Push', class: 'action-btn'%>
           </div>
-        </div>
-        <% end %>
-	      </div>
-      </div>
-    </div>
-
-    <div class="createform2">
-      <div class="ham2" id="ham2">
-	      <span class="ham_line ham_line1"></span>
-	      <span class="ham_line ham_line2"></span>
-	      <span class="ham_line ham_line3"></span>
-      </div>
-
-      <div class="menu_wrapper" id="menu_wrapper2">
-        <div class="menu2">
-          <div class="menus-all">
-            <div class="titllabel">ゲスト一覧</div>
-            <% current_user.guests.order("guest_name DESC").each do |guest| %>
-            <div class="menus">
-              <div class="menus-name2">
-                <%= guest.guest_name %> <%= link_to '×', guest_path(guest.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
-              </div>
-            </div>
-            <% end %>
+          <div class="alert-warning1">
+            <%= render 'layouts/error_messages', model: f.object %>
           </div>
+          <% end %> 
         </div>
       </div>
     </div>
 
-    <div class="createform3">
-      <div class="ham3" id="ham3">
-	      <span class="ham_line ham_line1"></span>
-	      <span class="ham_line ham_line2"></span>
-	      <span class="ham_line ham_line3"></span>
+    <div class="list_menu">
+      <div class="title_a">
+        ゲスト一覧
       </div>
+      <div class="list_staff_list">
+        <div class="staff_lists">
+          <% current_user.guests.order("guest_name DESC").each do |guest| %>
+            <div class="staff_list">
+              <%= guest.guest_name %><%= link_to '×', guest_path(guest.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
+            </div>
+          <% end %> 
+        </div>
+      </div>
+    </div>
 
-      <div class="menu_wrapper" id="menu_wrapper3">
-        <div class="menu3">
-          <div class="menus-all1">
-            トップメニュー
-            <div class="menu-btn1">
-              <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
-            </div>
-            <div class="guest-btn1">
-              <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
-            </div>
-            <div class="chackroom-btn1">
-              <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
-            </div>
-            <div class="allsale-btn1">
-              <%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
-            </div>
-          </div>
+    <div class="main_menu">
+      <div class="title_a">
+        トップメニュー
+      </div>
+      <div class="top_menu_lists">
+        <div class="top_memu_list">
+          <ul>
+            <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -111,30 +82,3 @@
   </div>
 </footer>
 </body>
-
-<script>
-  const ham = document.getElementById('ham');
-  const menu_wrapper = document.getElementById('menu_wrapper');
-  ham.addEventListener('click',function() {
-	ham.classList.toggle('clicked');
-	menu_wrapper.classList.toggle('clicked');
-  });
-</script>
-
-<script>
-  const ham2 = document.getElementById('ham2');
-  const menu_wrapper2 = document.getElementById('menu_wrapper2');
-  ham2.addEventListener('click',function() {
-	ham2.classList.toggle('clicked');
-	menu_wrapper2.classList.toggle('clicked');
-  });
-</script>
-
-<script>
-  const ham3 = document.getElementById('ham3');
-  const menu_wrapper3 = document.getElementById('menu_wrapper3');
-  ham3.addEventListener('click',function() {
-	ham3.classList.toggle('clicked');
-	menu_wrapper3.classList.toggle('clicked');
-  });
-</script>

@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+/*エラーメッセージ*/
+.alert-warning{
+  color:#262626; 
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:10;
+}
+.alert-warning li{
+  font-size: 1vw;
+}
+
+/*フラッシュエラー*/
+p{
+  font-size: 1.5vw;
+}
+
+/*フォームラベル*/
+.menu-label{
+  font-family: Impact;
+  font-size: 20px;
+}
+.price-label{
+  font-family: Impact;
+  font-size: 20px;
+}
+.action-btn{
+  font-family: Impact;
+  font-size: 20px;
+  cursor: pointer;
+}
+.action-btn:active{
+  opacity: 0.8;
+}
