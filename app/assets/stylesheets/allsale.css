@@ -43,6 +43,7 @@
 /*トップメニュー*/
 .main30{
   display: flex;
+  background-color: blueviolet;
 }
 .ham30 {
 	position: relative;
@@ -110,7 +111,7 @@
 
 /*検索結果*/
 .searchall30{
-  height: 70%;
+  height: 60%;
   overflow: scroll;
 }
 .search1{
