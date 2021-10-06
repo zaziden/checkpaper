@@ -8,7 +8,8 @@
         <%= @checkrooms.room_name %>
       </div>
       <div class="check_hawmany">
-        <%= @checkrooms.how_many%>名<%= link_to "×", checkroom_path(@checkrooms), method: :delete, data: {"turbolinks" => false} %> 
+        <%= @checkrooms.how_many%>名
+        <%= link_to "×", checkroom_path(@checkrooms), method: :delete, data: {"turbolinks" => false} %> 
       </div>
     </div>
     <div class="message1">

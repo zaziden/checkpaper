@@ -8,36 +8,25 @@
   </div>
 </header>
 <main>
-<div class="main30">
-  <div class="menuber30">
-    <div class="ham30" id="ham">
-	    <span class="ham_line ham_line1"></span>
-	    <span class="ham_line ham_line2"></span>
-	    <span class="ham_line ham_line3"></span>
+<div class="maintop5">
+  <div class="main_menu">
+    <div class="title_a">
+      トップメニュー
     </div>
-
-    <div class="menu_wrapper30" id="menu_wrapper">
-	    <div class="menu30">
-    	  <div class="menus-all30">
-          トップメニュー
-          <div class="menu-btn1">
-            <%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
-          </div>
-          <div class="guest-btn1">
-            <%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "guestbtn1" %>
-          </div>
-          <div class="chackroom-btn1">
-            <%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "chackroombtn1" %>
-          </div>
-          <div class="allsale-btn1">
-            <%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "allsalebtn1" %>
-          </div>
-        </div>
-	    </div>
+    <div class="top_menu_lists">
+      <div class="top_memu_list">
+        <ul>
+          <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="search">
-    <div class="wa">売上検索</div>
+    <div class="searchs">
+      <div class="wa">売上検索</div>
       <%= search_form_for @q, url: search_allsales_path do |f| %>
         <div class="wb">
           <%= f.date_field :created_at_gteq %> ~
@@ -50,9 +39,10 @@
           <%= f.collection_select :checkguest_eq, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択", class: 'wf' %>
         </div>
         <div class="wd">
-          <%= f.submit '検索' %>
+          <%= f.submit '検索', class: "submit" %>
         </div>
       <% end %>
+    </div>
   </div>
 </div>
 </main>

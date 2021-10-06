@@ -1,11 +1,11 @@
 /*伝票サイドバー*/
 .maintop2{
   height: calc(100vh - 200px);
-  width: 33%;
+	width: 33%;
 }
 .check_lists{
-  width: 100%;
   height: 100%;
+	width: 100%;
 }
 
 .ham {

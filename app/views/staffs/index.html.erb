@@ -43,7 +43,7 @@
       </div>
       <div class="list_staff_list">
         <div class="staff_lists">
-          <% current_user.staffs.order("nickname").each do |staff| %>
+          <% current_user.staffs.order(:id).each do |staff| %>
             <div class="staff_list">
               <%= staff.nickname %> <%= link_to '×', staff_path(staff.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
             </div>

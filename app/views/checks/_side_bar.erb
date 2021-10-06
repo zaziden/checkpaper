@@ -12,7 +12,7 @@
 
     <div class="check_list">
       <div class="check_list_names">
-        <% current_user.checkrooms.order("room_name").each do |checkroom| %>
+        <% current_user.checkrooms.order(:id).each do |checkroom| %>
           <div class="check_list_name">
             <%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %>
           </div>

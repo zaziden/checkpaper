@@ -15,99 +15,42 @@
 
 /*検索*/
 .search{
-  width: 100%;
+  width: 66%;
   height: 100%;
-  padding: 5% 0 0 0;
+  position: relative;
+}
+.searchs{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 28%;
 }
 .wa{
-  font-size: 200%;
-  margin: 0 0 3% 25%;
-  width: 300px;
+  font-size: 2.5vw;
+  margin-bottom: 20px;
 }
 .wb{
-  margin-left: 25%;
-  margin-bottom: 5%;
-  font-size: 200%;
-  
+  font-size: 1.5vw;
+  margin-bottom: 20px;
 }
 .wc{
-  margin-left: 25%;
-  margin-bottom: 5%;
-  font-size: 200%;
+  font-size: 1.5vw;
+  margin-bottom: 20px;
 }
 .wd{
-  font-size: 200%;
-  margin: 0 0 5% 25%;
+  font-size: 2.0vw;
+}
+.submit{
+  width: 8vw;
   border-radius: 5px;
+	box-shadow: 5px 5px #000;
 }
 /*トップメニュー*/
-.main30{
+.maintop5{
+	height: calc(100vh - 200px);
   display: flex;
-  background-color: blueviolet;
-}
-.ham30 {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	background-color: greenyellow;
-  margin: 0 20px 20px 20px;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.ham_line {
-	position: absolute;
-	left: 20px;
-	width: 20px;
-	height: 5px;
-	background-color: #333333;
-}
-.ham_line1 {
-	top: 18px;
-}
-.ham_line2 {
-	top: 26px;
-}
-.ham_line3 {
-	top: 34px;
 }
 
-.ham_line {
-	transition: all 0.3s;
-}
-
-.clicked .ham_line1 {
-	transform: rotate(45deg);
-	top: 26px;
-}
-.clicked .ham_line2 {
-	width: 0px;
-}
-.clicked .ham_line3 {
-	transform: rotate(-45deg);
-	top: 26px;
-}
-.menu30 {
-	position: fixed;
-  position: relative;
-	width: 300px;
-	height: 300px;
-	left: -500px;
-	background-color: greenyellow;
-	transition: all 0.8s;
-  border-radius: 5px;
-	box-shadow: 5px 5px #000;
-}
-.clicked .menu30 {
-	left: 8px;
-}
-.menus-all30{
-  position: absolute;
-  top: 50px;
-}
-.menuber30{
-  padding-top: 10px;
-}
 
 /*検索結果*/
 .searchall30{
