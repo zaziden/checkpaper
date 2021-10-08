@@ -24,24 +24,22 @@
     <div class="check_create_form">
       <%= form_with model: [@checkrooms, @check], class: 'form', local: true do |f| %>
         <div class="check_create_form1">
-          <%= f.collection_select :menuname, @menus, :menu_name, :menu_name, {include_blank: "メニュー選択"}, {class:"menuname", id:"ab"} %>
+          <%= f.collection_select :menuprice, @menus, :price, :menu_name, {include_blank: "メニュー選択"}, {class:"menuname", id:"ab",onchange:"myfunc()"} %>
         </div>
         <div class="check_create_link">
           <%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
         </div>
         <div class="check_create_count">
-          <INPUT type=button value="－" onClick="minus(this.form.gh)">
-          <%= f.text_field :cup,  value: 1, class: 'cups', id: 'gh', size: 4 %>
-          <INPUT type=button value="＋" onClick="plus(this.form.gh)">
+          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %>
         </div>
         <div class="check_create_form2">
-          <%= f.collection_select :menuprice, @menus.select(:price).distinct.order('price'), :price, :price, {include_blank: "金額選択"}, {class: 'menuprice',  id: 'cd', onchange:"myfunc()"} %>
+          <%= f.hidden_field :menuname, class: 'menuprice',  id: 'cd' %>
         </div>
         <div class="check_create_form3">
-          <%= f.text_field :menuallprice, class: 'menuallprice', placeholder: '合計金額(半角数字)', id: 'ef'%>
+          <%= f.hidden_field :menuallprice, class: 'menuallprice', placeholder: '合計金額(半角数字)', id: 'ef'%>
         </div>
         <div class="check_create_btn">
-          <%=f.submit class:"drinkmenu", value: 'オーダー追加' %>
+          <%=f.submit class:"drinkmenu", value: 'Push' %>
         </div>
       <% end %>
     </div>
@@ -51,19 +49,13 @@
 
       <SCRIPT>
         function myfunc(){
-          let price = document.getElementById("cd").value;
-          let cup = document.getElementById("gh").value
-          document.getElementById("ef").value = price * cup;
+          var price = document.getElementById("ab");
+          var price1 = document.getElementById("ab").value;
+          var idx = price.selectedIndex;
+          var txt = price.options[idx].text;
+          var cup = document.getElementById("gh").value
+          document.getElementById("ef").value = price1 * cup ;
+          document.getElementById("cd").value = txt ;
         }
       </SCRIPT>
     
-      <SCRIPT>
-        function plus(chk){
-        chk.value++;
-        if (chk.value==100) {chk.value=99}
-        }
-        function minus(chk){
-        chk.value--;
-        if (chk.value==-1) {chk.value=0}
-        }
-      </SCRIPT>

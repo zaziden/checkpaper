@@ -32,11 +32,13 @@
   text-align: center;
   position: absolute;
   top: 30%;
-  left: 25%;
+  left: 30%;
 }
 .check_create_form1{
   margin: 0 0 20px 0;
   font-size: 1.5vw;
+  width: 100%;
+  height: 50px;
 }
 .check_create_form2{
   margin: 0 0 20px 0;
@@ -55,6 +57,7 @@
 }
 .menuname{
   width: 90%;
+  height: 50px;
   text-align: center;
 }
 .menuallprice{
@@ -67,7 +70,20 @@
 }
 .drinkmenu{
   cursor: pointer;
+  font-size: 1.5vw;
+  height: 4vw;
+  width: 5vw;
+  border-radius: 5px;
+	box-shadow: 2px 2px #000;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.drinkmenu:active{
+	box-shadow: none;
+	margin: 2px 0 0 2px;
+	opacity: 0.8;
 }
 .cups{
-  text-align: right;
+  text-align: center;
+  font-size: 1.5vw;
+  width: 8vw;
 }
