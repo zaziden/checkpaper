@@ -1,7 +1,11 @@
 <div class="allcheck">
   <p>合計</p>
   <%= form_with model: [@checkrooms, @allsale], class: 'final-check', local: true do |f| %>
+  <div class="all">
     <%= f.text_field :allprice, value: @allsales, class: 'alls' %>
-    <%=f.submit class: 'o', value: '精算'%>
+  </div>
+  <div class="payments">
+    <%= f.select :payment, {'現金': '現金', 'クレジットカード': 'クレジットカード', '電子マネー': '電子マネー'}, { include_blank: '支払い方法'}, { class: 'payment' } %> <%=f.submit class: 'o', value: '精算'%>
+  </div>
   <% end %>
 </div>

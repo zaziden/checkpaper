@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_14_074955) do
+ActiveRecord::Schema.define(version: 2021_10_11_090311) do
 
   create_table "allsales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "allprice"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_074955) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
+    t.string "payment"
     t.index ["checkroom_id"], name: "index_allsales_on_checkroom_id"
     t.index ["deleted_at"], name: "index_allsales_on_deleted_at"
     t.index ["user_id"], name: "index_allsales_on_user_id"

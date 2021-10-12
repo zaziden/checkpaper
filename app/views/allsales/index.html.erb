@@ -36,7 +36,7 @@
           <%= f.collection_select :checkstaff_eq, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'wf' %>
         </div>
         <div class="wc">
-          <%= f.collection_select :checkguest_eq, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択", class: 'wf' %>
+          <%= f.collection_select :checkguest_eq, @allsale.select(:checkguest).distinct, :checkguest, :checkguest, include_blank: "ゲスト選択", class: 'wf' %>
         </div>
         <div class="wd">
           <%= f.submit '検索', class: "submit" %>

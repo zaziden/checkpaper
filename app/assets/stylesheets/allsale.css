@@ -4,8 +4,14 @@
   align-items: center;
   justify-content: space-around;
 }
+.all{
+  margin-bottom: 10px;
+}
 .alls{
   text-align: right;
+  font-size: 1.5vw;
+}
+.payment{
   font-size: 1.5vw;
 }
 .o{
@@ -70,26 +76,52 @@
   margin-bottom: 20px;
 }
 .searchday{
-  width: 25%;
+  width: 20%;
+  text-align: center;
   
 }
 .searchstaff{
-  width: 25%;
+  width: 20%;
+  text-align: right;
   
 }
 .searchguest{
-  width: 25%;
+  width: 20%;
+  text-align: right;
 }
 .searchallprice{
+  width: 20%;
+  text-align: right;
+}
+.searchpayment{
+  width: 20%;
+  text-align: center;
+}
+.allprice_list{
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+}
+.allsalelogo{
   width: 25%;
+  font-size: 1.5vw;
+  color:red;
+}
+
+.searchalls{
+  display: flex;
+  width: 100%;
 }
 .searchall1{
   height: 100%;
   padding: 30px;
 }
 .searchall{
-  font-size: 50px;
+  width: 25%;
+  margin: 20px 0 0 0 ;
+  font-size: 2vw;
+  text-align: center;
 }
 .top{
-  font-size: 40px;
+  font-size: 2vw;
 }

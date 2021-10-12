@@ -3,7 +3,7 @@ class AllsalesController < ApplicationController
   before_action :checkrooms_find, only: [:new, :create]
   
   def index
-    @allsale = Allsale.with_deleted.where(user_id: current_user.id).sum(:allprice)
+    @allsale = Allsale.with_deleted.where(user_id: current_user.id)
     @staff = Staff.where(user_id: current_user.id)
     @guest = Guest.where(user_id: current_user.id)
   end
@@ -39,6 +39,6 @@ class AllsalesController < ApplicationController
   end
 
   def allsale_params
-    params.require(:allsale).permit(:allprice).merge(user_id: current_user.id, checkroom_id: @checkrooms.id, checkstaff: @checkrooms.staff_name, checkguest: @checkrooms.room_name)
+    params.require(:allsale).permit(:allprice, :payment).merge(user_id: current_user.id, checkroom_id: @checkrooms.id, checkstaff: @checkrooms.staff_name, checkguest: @checkrooms.room_name)
   end
 end
