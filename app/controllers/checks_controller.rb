@@ -16,13 +16,20 @@ class ChecksController < ApplicationController
 
   def create
     @checkrooms = Checkroom.find(params[:checkroom_id])
-    @check = @checkrooms.checks.new(check_params)
+    @check = @checkrooms.checks.build(check_params)
     if @check.save
       redirect_to checkroom_checks_path(@checkrooms)
     else
       flash[:notice] = "入力項目に誤りがあります"
       redirect_to checkroom_checks_path(@checkrooms)
     end
+  end
+
+  def destroy
+    @checkrooms = Checkroom.find(params[:checkroom_id])
+    @checks = @checkrooms.checks.find(params[:id])
+    @checks.really_destroy!
+    redirect_to checkroom_checks_path(@checkrooms)
   end
 
   private

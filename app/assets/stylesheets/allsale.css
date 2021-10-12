@@ -66,8 +66,23 @@
 
 
 /*検索結果*/
+.searchall1{
+  height: 100%;
+  padding: 20px;
+}
+.search_list{
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.day{
+  width: 25%;
+  text-align: center;
+  font-size: 1.5vw;
+  color:red;
+}
 .searchall30{
-  height: 60%;
+  height: 55%;
   overflow: scroll;
 }
 .search1{
@@ -111,10 +126,6 @@
 .searchalls{
   display: flex;
   width: 100%;
-}
-.searchall1{
-  height: 100%;
-  padding: 30px;
 }
 .searchall{
   width: 25%;

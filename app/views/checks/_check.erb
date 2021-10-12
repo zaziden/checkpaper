@@ -10,5 +10,6 @@
   </div>
   <div class="message-content">
     ¥<%= check.menuallprice %>
-  </div>
+    <%= link_to "取消", checkroom_check_path(@checkrooms,check), method: :delete, data: {"turbolinks" => false} %>
+  </div> 
 </div>

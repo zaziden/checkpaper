@@ -30,16 +30,13 @@
           <%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
         </div>
         <div class="check_create_count">
-          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %>
+          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> <%=f.submit class:"drinkmenu", value: 'Push' %>
         </div>
         <div class="check_create_form2">
           <%= f.hidden_field :menuname, class: 'menuprice',  id: 'cd' %>
         </div>
         <div class="check_create_form3">
           <%= f.hidden_field :menuallprice, class: 'menuallprice', placeholder: '合計金額(半角数字)', id: 'ef'%>
-        </div>
-        <div class="check_create_btn">
-          <%=f.submit class:"drinkmenu", value: 'Push' %>
         </div>
       <% end %>
     </div>
