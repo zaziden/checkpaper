@@ -68,7 +68,7 @@
 /*検索結果*/
 .searchall1{
   height: 100%;
-  padding: 20px;
+  padding: 0 0 20px 0;
 }
 .search_list{
   display: flex;
@@ -80,6 +80,7 @@
   text-align: center;
   font-size: 1.5vw;
   color:red;
+  border: 1px solid black;
 }
 .searchall30{
   height: 55%;
@@ -89,24 +90,24 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  font-size: 1.5vw;
+  width: 100%;
 }
 .searchday{
   width: 20%;
   text-align: center;
-  
 }
 .searchstaff{
   width: 20%;
-  text-align: right;
-  
+  text-align: center;
 }
 .searchguest{
   width: 20%;
-  text-align: right;
+  text-align: center;
 }
 .searchallprice{
   width: 20%;
-  text-align: right;
+  text-align: center;
 }
 .searchpayment{
   width: 20%;
@@ -121,6 +122,7 @@
   width: 25%;
   font-size: 1.5vw;
   color:red;
+  text-align: center;
 }
 
 .searchalls{
