@@ -12,7 +12,7 @@
     <div class="imag">
       <img src="/assets/img_logo_pc.jpeg" alt="">
       <div class="createbtn">
-        <a href="menus/" class="menubtn"  onClick="javascript:double(this)">メニュー</a>
+        <a href="menus/" class="menubtn" onClick="javascript:double(this)" >メニュー</a>
         <a href="guests/" class="guestbtn">ゲスト</a>
         <a href="staffs/" class="staffbtn">スタッフ</a>
         <a href="checkrooms/" class="chackroombtn">伝票</a>
@@ -26,10 +26,10 @@
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'out'%>
   </div>
 </footer>
-</body>
-
 <script>
 function double(btn){
 btn.disabled=true;
 }
 </script>
+</body>
+
