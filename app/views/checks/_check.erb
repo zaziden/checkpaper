@@ -2,7 +2,7 @@
   <div class="message-date">
     <%= l check.created_at %>
   </div>
-  <div class="message-user">
+  <div class="message-name">
     <%= check.menuname %>
   </div>
   <div class="cup">
@@ -10,6 +10,11 @@
   </div>
   <div class="message-content">
     ¥<%= check.menuallprice %>
-    <%= link_to "取消", checkroom_check_path(@checkrooms,check), method: :delete, data: {"turbolinks" => false} %>
   </div> 
+  <div class="del">
+    <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+    <% else %>
+    <%= link_to "取消", checkroom_check_path(@checkrooms,check), method: :delete, data: {"turbolinks" => false} %>
+    <% end %>
+  </div>
 </div>

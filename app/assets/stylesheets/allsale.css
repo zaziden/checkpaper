@@ -14,8 +14,11 @@
 .payment{
   font-size: 1.5vw;
 }
+.o1{
+  width: 100px;
+}
 .o{
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   cursor: pointer;
   border-radius: 5px;
 	box-shadow: 2px 2px #000;
@@ -25,7 +28,10 @@
 	margin: 2px 0 0 2px;
 	opacity: 0.8;
 }
-
+.o2{
+  font-size: 1.5vw;
+  color: red;
+}
 /*検索*/
 .search{
   width: 66%;

@@ -6,18 +6,26 @@
   font-size: 1.5vw;
 }
 .message-date{
-  width: 25%;
+  width: 20%;
 }
 
-.message-user{
-  width: 25%;
+.message-name{
+  width: 30%;
 }
 .cup{
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 .message-content{
-  width: 25%;
+  width: 20%;
   text-align: right;
+}
+.del{
+  width: 10%;
+  text-align: right;
+}
+.checkzumi{
+  font-size: 1.6vw;
+  color: red;
 }
 

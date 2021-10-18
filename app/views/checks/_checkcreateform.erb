@@ -9,11 +9,18 @@
       </div>
       <div class="check_hawmany">
         <%= @checkrooms.how_many%>名
+        <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
         <%= link_to "削除", checkroom_path(@checkrooms), method: :delete, data: {"turbolinks" => false} %> 
+        <% end %>
       </div>
     </div>
     <div class="message1">
       <%= render partial: 'check', collection: @checks %>
+      <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+        <div class="checkzumi">
+          清算済です。伝票を削除してください。
+        </div>
+      <%end%>
     </div>
     <%= render "allsales/allsales" %>
   </div>
@@ -22,6 +29,8 @@
       オーダー
     </div>
     <div class="check_create_form">
+     <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+     <% else %>
       <%= form_with model: [@checkrooms, @check], class: 'form', local: true do |f| %>
         <div class="check_create_form1">
           <%= f.collection_select :menuprice, @menus, :price, :menu_name, {include_blank: "メニュー選択"}, {class:"menuname", id:"ab",onchange:"myfunc()"} %>
@@ -30,7 +39,8 @@
           <%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
         </div>
         <div class="check_create_count">
-          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> <%=f.submit class:"drinkmenu", value: 'Push' %>
+          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> 
+          <%=f.submit class:"drinkmenu", value: 'Push' %>
         </div>
         <div class="check_create_form2">
           <%= f.hidden_field :menuname, class: 'menuprice',  id: 'cd' %>
@@ -38,6 +48,7 @@
         <div class="check_create_form3">
           <%= f.hidden_field :menuallprice, class: 'menuallprice', placeholder: '合計金額(半角数字)', id: 'ef'%>
         </div>
+      <% end %>
       <% end %>
     </div>
   </div>

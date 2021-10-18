@@ -12,11 +12,11 @@
     <div class="imag">
       <img src="/assets/img_logo_pc.jpeg" alt="">
       <div class="createbtn">
-        <%= link_to "メニュー", menus_path, class:"menubtn"%>
-        <%= link_to "ゲスト", guests_path, class:"guestbtn"%>
-        <%= link_to "スタッフ", staffs_path, class:"staffbtn"%>
-        <%= link_to "伝票", checkrooms_path, class:"checkroombtn"%>
-        <%= link_to "メニュー", allsales_path, class:"allsalebtn"%>
+        <%= link_to "メニュー", menus_path(current_user), class:"menubtn"%>
+        <%= link_to "ゲスト", guests_path(current_user), class:"guestbtn"%>
+        <%= link_to "スタッフ", staffs_path(current_user), class:"staffbtn"%>
+        <%= link_to "伝票", checkrooms_path(current_user), class:"checkroombtn"%>
+        <%= link_to "売上", allsales_path(current_user), class:"allsalebtn"%>
       </div>
     </div>
   </div>

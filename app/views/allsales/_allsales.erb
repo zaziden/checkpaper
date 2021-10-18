@@ -5,7 +5,14 @@
     <%= f.text_field :allprice, value: @allsales, class: 'alls' %>
   </div>
   <div class="payments">
-    <%= f.select :payment, {'現金': '現金', 'クレジットカード': 'クレジットカード', '電子マネー': '電子マネー'}, { include_blank: '支払い方法'}, { class: 'payment' } %> <%=f.submit class: 'o', value: '精算'%>
+    <%= f.select :payment, {'現金': '現金', 'クレジットカード': 'クレジットカード', '電子マネー': '電子マネー'}, { include_blank: '支払い方法'}, { class: 'payment' } %> 
+    <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+    <span class="o2">清算済</span>
+    <% else %>
+    <span class="o1">
+    <%=f.submit class: 'o', value: '精算'%>
+    </span>
+    <% end %>
   </div>
   <% end %>
 </div>
