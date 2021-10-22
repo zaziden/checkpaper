@@ -19,7 +19,8 @@
 }
 .message1{
   overflow: scroll;
-  height: 65%;
+  height: 60%;
+  margin-bottom: 20px;
 }
 
 /*伝票右*/
@@ -79,8 +80,10 @@
 }
 .drinkmenu:active{
 	box-shadow: none;
-	margin: 2px 0 0 2px;
 	opacity: 0.8;
+}
+.drinkmenu2{
+  width: 100px;
 }
 .cups{
   text-align: center;

@@ -40,7 +40,9 @@
         </div>
         <div class="check_create_count">
           <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> 
+        <span class="drinkmenu2">
           <%=f.submit class:"drinkmenu", value: 'Push' %>
+        </span>
         </div>
         <div class="check_create_form2">
           <%= f.hidden_field :menuname, class: 'menuprice',  id: 'cd' %>

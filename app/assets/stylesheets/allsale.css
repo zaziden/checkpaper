@@ -13,19 +13,20 @@
 }
 .payment{
   font-size: 1.5vw;
+  height: 5vh;
 }
 .o1{
-  width: 100px;
+  width: 200px;
 }
 .o{
   font-size: 1.7vw;
   cursor: pointer;
   border-radius: 5px;
 	box-shadow: 2px 2px #000;
+  width: 5vw;
 }
 .o:active{
 	box-shadow: none;
-	margin: 2px 0 0 2px;
 	opacity: 0.8;
 }
 .o2{
@@ -91,11 +92,12 @@
 .searchall30{
   height: 55%;
   overflow: scroll;
+  margin-top: 30px;
 }
 .search1{
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin: 20px 0;
   font-size: 1.5vw;
   width: 100%;
 }
@@ -121,7 +123,7 @@
 }
 .allprice_list{
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
 }
 .allsalelogo{

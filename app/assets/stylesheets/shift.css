@@ -1,0 +1,40 @@
+/*左、右はstaff.cssとほぼ同じ*/
+/*左*/
+.form_shift_text{
+  font-size: 2vw;
+  margin: 10px 0;
+}
+
+/*中*/
+.list_shifts{
+  height: 100%;
+  width: 33%;
+}
+.list_shift_list{
+  margin-top: 20%;
+  height: 50%;
+  overflow: scroll;
+}
+.shift_block{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5vw;
+  margin-bottom: 10%;
+}
+.shift_list{
+  width: 25%;
+}
+.shift_start_time{
+  width: 25%;
+}
+.shift_stop_time{
+  width: 25%;
+  text-align: center;
+}
+.shift_delete{
+  width: 25%;
+  text-align: center;
+}
+.ou{
+  text-decoration: none;
+}

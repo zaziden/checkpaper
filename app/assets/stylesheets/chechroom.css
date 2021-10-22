@@ -51,14 +51,19 @@
 }
 
 .check_list{
-  height: 60%;
+  height: 50%;
   position: relative;
   overflow: scroll;
 }
 .check_list_names{
   position: absolute;
-  top: 30px;
+  top: 5%;
   left: 35%;
+}
+.tabs{
+	margin-top: 10px;
+	font-size: 1.5vw;
+	margin-left: 10px;
 }
 .check_list_name{
   margin-bottom: 30px;
@@ -85,9 +90,9 @@
 }
 .create_form{
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 100px;
-  font-size: 120%;
+  font-size: 150%;
 }
 .check_list_form1{
   padding-bottom: 10px;
@@ -99,4 +104,15 @@
   font-size: 1vw;
   width: 70%;
   text-align: center;
+}
+.action-btn{
+	width: 100px;
+	height: 50px;
+	border-radius: 5px;
+	box-shadow: 3px 3px #000;
+}
+.action-btn:active{
+	box-shadow: none;
+	margin: 3px 0 0 3px;
+	opacity: 0.8;
 }

@@ -1,0 +1,89 @@
+<body>
+<header>
+  <div class="title">
+    Shift
+  </div>
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+  <div class="login">
+    <%= link_to current_user.name, root_path(current_user), data: {"turbolinks" => false}, class: "shop" %>
+  </div>
+</header>
+
+<main>
+  <div class="maintop1">
+    <div class="form_staff">
+      <div class="title_a">
+        出勤者入力
+      </div>
+      <div class="form_staff_create_form">
+        <div class="form_staff_create_area">
+          <%=form_with model: @shift, local: true do |f|%>
+            <div class="form_staff_label">
+              <%= f.label 'Staff Name', class: 'price-label'%>
+            </div>
+            <div class="form_shift_text">
+              <%= f.collection_select :shift_staff, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'shift_staff_serect' %>
+              <%= f.hidden_field :start_time, value:Time.now, class: 'start' %>
+            </div>
+            <div class="form_staff_btn">
+              <%= f.submit "出勤", class: 'action-btn' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="list_shifts">
+      <div class="title_a">
+        出勤者一覧
+      </div>
+      <div class="list_shift_list">
+        <% current_user.shifts.each do |shift| %>
+          <% if shift.stop_time == nil %>
+            <div class="shift_block">
+              <div class="shift_list">
+                <%= shift.shift_staff %>
+              </div>
+              <div class="shift_start_time">
+                出勤時刻
+                <%= shift.start_time.strftime('%H:%M') %>
+              </div>
+              <div class="shift_stop_time">
+                <%= link_to '退勤する', shift_path(shift.id), method: :patch, data: {"turbolinks" => false}, class: 'ou'%>
+              </div>
+              <div class="shift_delete">
+                <%= link_to '削除', shift_path(shift.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="main_menu">
+      <div class="title_a">
+        トップメニュー
+      </div>
+      <div class="top_menu_lists">
+        <div class="top_memu_list">
+          <ul>
+            <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="logout">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks" => false}, class: 'out'%>
+  </div>
+</footer>
+</body>

@@ -34,15 +34,15 @@ p{
 /*フォームラベル*/
 .menu-label{
   font-family: Impact;
-  font-size: 20px;
+  font-size: 2vw;
 }
 .price-label{
   font-family: Impact;
-  font-size: 20px;
+  font-size: 2vw;
 }
 .action-btn{
   font-family: Impact;
-  font-size: 20px;
+  font-size: 2vw;
   cursor: pointer;
 }
 .action-btn:active{

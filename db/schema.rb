@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_11_090311) do
+ActiveRecord::Schema.define(version: 2021_10_19_053529) do
 
   create_table "allsales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "allprice"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 2021_10_11_090311) do
     t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
+  create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shift_staff"
+    t.datetime "start_time"
+    t.datetime "stop_time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shifts_on_user_id"
+  end
+
   create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.bigint "user_id", null: false
@@ -100,5 +110,6 @@ ActiveRecord::Schema.define(version: 2021_10_11_090311) do
   add_foreign_key "checks", "users"
   add_foreign_key "guests", "users"
   add_foreign_key "menus", "users"
+  add_foreign_key "shifts", "users"
   add_foreign_key "staffs", "users"
 end

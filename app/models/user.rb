@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :checkrooms
   has_many :checks
   has_many :allsales
+  has_many :shifts
 end
