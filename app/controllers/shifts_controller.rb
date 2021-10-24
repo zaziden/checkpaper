@@ -22,7 +22,7 @@ class ShiftsController < ApplicationController
   def update
     @shift = Shift.find(params[:id])
     @shift.update(stop_time: Time.now)
-    flash[:notice] = "退勤時間登録 #{Time.now.strftime('%H:%M')}"
+    flash[:notice] = "退勤時間登録#{Time.now.strftime('%H:%M')}"
     redirect_to shifts_path(current_user)
   end
 
