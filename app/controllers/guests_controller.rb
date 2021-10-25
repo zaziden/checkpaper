@@ -19,7 +19,7 @@ class GuestsController < ApplicationController
   end
 
   def destroy
-    guest = Guest.find(params[:id])
+    guest = current_user.guests.find(params[:id])
     guest.destroy
     flash[:notice] = "ゲストを除名しました"
     redirect_to guests_path(current_user.id)

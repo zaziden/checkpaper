@@ -20,7 +20,6 @@
 
 ## 実装予定の機能
 * 経費の管理機能
-* タブレットやスマフォでも使用可能に実装
 
 ## ローカルでの動作方法
 * 
@@ -79,8 +78,10 @@
 | Column     | Type       | Options                        |
 | -----------|------------|--------------------------------|
 | user       | references | null: false, foreign_key: true |
-| room_name  | integer    | null: false                    |
-| staffname  | integer    |                                |
+| room_name  | string     | null: false                    |
+| staff_name | string     |                                |
+| how_many   | integer    | null: false                    |
+
 
 ### Association
 * belongs_to :user
@@ -96,6 +97,7 @@
 | menuname    | string     | null: false                    |
 | menuprice   | integer    | null: false                    |
 | cup         | integer    | null: false                    |
+| menuallprice| integer    | null: false                    |
 
 ### Association
 * belongs_to :user
@@ -109,8 +111,22 @@
 | user        | references | null: false, foreign_key: true |
 | allprice    | integer    | null: false                    |
 | checkstaff  | string     | null: false                    |
+| checkguest  | string     | null: false                    |
+| payment     | string     | null: false                    |
 
 ### Association
 * belongs_to :user
 * belongs_to :checkroom
+
+## shifts テーブル（勤怠記録）
+
+| Column      | Type       | Options                        |
+| ------------| ---------- | -------------------------------|
+| user        | references | null: false, foreign_key: true |
+| shift_staff | string     | null: false                    |
+| start_time  | datetime   |                                |
+| stop_time   | datetime   |                                |
+
+### Association
+* belongs_to :user
 

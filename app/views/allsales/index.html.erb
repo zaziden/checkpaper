@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    All Sales
+    ALL SALES
   </div>
   <div class="login">
     <%= link_to current_user.name, root_path(current_user), class: "shop" %>
@@ -20,7 +20,7 @@
           <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           <li><%= link_to 'シフト', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'オーダー', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
         </ul>
       </div>
     </div>

@@ -19,7 +19,7 @@ class StaffsController < ApplicationController
   end
 
   def destroy
-    staff = Staff.find(params[:id])
+    staff = current_user.staffs.find(params[:id])
     staff.destroy
     flash[:notice] = "スタッフを除名しました"
     redirect_to staffs_path(current_user.id)

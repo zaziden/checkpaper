@@ -18,7 +18,7 @@
       <%= render partial: 'check', collection: @checks %>
       <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
         <div class="checkzumi">
-          清算済です。伝票を削除してください。
+          データ保存済。伝票を削除できます。
         </div>
       <%end%>
     </div>

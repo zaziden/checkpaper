@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    Staff List
+    STAFF LIST
   </div>
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
@@ -62,8 +62,8 @@
             <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
             <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
             <li><%= link_to 'シフト', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-            <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-            <li><%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'オーダー', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'セールス', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           </ul>
         </div>
       </div>
