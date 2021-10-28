@@ -46,9 +46,9 @@
           <%= shiftlist.stop_time.strftime('%H:%M')%>
         </div>
         <div class="searchpayment">
-          <%= sliftall = shiftlist.stop_time - shiftlist.start_time %>
+          <% sliftall = shiftlist.stop_time - shiftlist.start_time %>
           <% @sliftall = sliftall / 3600 %>
-          <% @sliftall.round(2) %>h
+          <%= @sliftall.round(2) %>h
         </div>
       </div>
       <% end %>
