@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    ALL SALES SEARCH
+    SHIFT SEARCH
   </div>
   <div class="login">
     <%= link_to current_user.name, root_path(current_user), class: "shop" %>
@@ -17,28 +17,28 @@
       <div class="top_memu_list">
         <ul>
           <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to '勤怠データ', shift_lists_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'タイムカード', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to 'タイムカード', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="search">
     <div class="searchs">
-      <div class="wa">売上検索</div>
-      <%= search_form_for @q, url: search_allsales_path do |f| %>
+      <div class="wa">勤怠データ検索</div>
+      <%= search_form_for @q, url: search_shift_lists_path do |f| %>
         <div class="wb">
           <%= f.date_field :created_at_gteq,value: Time.now.beginning_of_month.strftime("%Y-%m-%d") %> ~
           <%= f.date_field :created_at_lteq_end_of_day %>
         </div>
         <div class="wc">
-          <%= f.collection_select :checkstaff_eq, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'wf' %>
+          <%= f.collection_select :shift_staff_eq, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'wf' %>
         </div>
         <div class="wc">
-          <%= f.collection_select :checkguest_eq, @allsale.select(:checkguest).distinct, :checkguest, :checkguest, include_blank: "ゲスト選択", class: 'wf' %>
+
         </div>
         <div class="wd">
           <%= f.submit '検索', class: "submit" %>

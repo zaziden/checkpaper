@@ -2,6 +2,7 @@ class ChecksController < ApplicationController
 
   def index
     @allsale = Allsale.new
+    @allsalee = Allsale.find_by(checkroom_id: params[:checkroom_id])
     @check = Check.new
     @menus = Menu.where(user_id: current_user.id).order("price")
     @guest = Guest.where(user_id: current_user.id)

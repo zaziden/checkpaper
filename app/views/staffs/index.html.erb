@@ -44,9 +44,14 @@
       <div class="list_staff_list">
         <div class="staff_lists">
           <% current_user.staffs.order(:id).each do |staff| %>
+          <div class="staff_lists1">
             <div class="staff_list">
-              <%= staff.nickname %> <%= link_to '×', staff_path(staff.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
+              <%= staff.nickname %> 
             </div>
+            <div class="dele">
+              <%= link_to '削除', staff_path(staff.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
+            </div>
+          </div>
           <% end %> 
         </div>
       </div>
@@ -61,9 +66,10 @@
           <ul>
             <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
             <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-            <li><%= link_to 'シフト', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-            <li><%= link_to 'オーダー', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-            <li><%= link_to 'セールス', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to 'タイムカード', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '勤怠データ', shift_lists_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+            <li><%= link_to '売上', allsales_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
           </ul>
         </div>
       </div>

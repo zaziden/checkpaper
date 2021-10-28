@@ -2,10 +2,15 @@
   <p>合計</p>
   <%= form_with model: [@checkrooms, @allsale], class: 'final-check', local: true do |f| %>
   <div class="all">
+    <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+    <p class="allsaledate">¥<%= @allsalee.allprice %></p>
+    <% else %>
     <%= f.text_field :allprice, value: @allsales, class: 'alls' %>
+    <% end %>
   </div>
   <div class="payments"> 
     <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+    <span class="o3"><%= @allsalee.payment %></span>
     <span class="o2">清算済</span>
     <% else %>
     <%= f.select :payment, {'現金': '現金', 'クレジットカード': 'クレジットカード', '電子マネー': '電子マネー'}, { include_blank: '支払い方法'}, { class: 'payment' } %>

@@ -18,7 +18,7 @@
       <%= render partial: 'check', collection: @checks %>
       <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
         <div class="checkzumi">
-          データ保存済。伝票を削除できます。
+          清算データ保存済。伝票を削除できます。
         </div>
       <%end%>
     </div>
@@ -39,7 +39,7 @@
           <%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
         </div>
         <div class="check_create_count">
-          <%= f.number_field :cup, step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> 
+          <%= f.number_field :cup, value: 1,step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> 
         <span class="drinkmenu2">
           <%=f.submit class:"drinkmenu", value: 'Push' %>
         </span>

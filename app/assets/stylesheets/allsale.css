@@ -11,6 +11,9 @@
   text-align: right;
   font-size: 1.5vw;
 }
+.allsaledate{
+  text-align: right;
+}
 .payment{
   font-size: 1.5vw;
   height: 30px;
@@ -29,6 +32,10 @@
 .o2{
   font-size: 1.5vw;
   color: red;
+}
+.o3{
+  font-size: 1.5vw;
+  margin-right: 10px;
 }
 /*検索*/
 .search{
@@ -59,6 +66,7 @@
 }
 .submit{
   width: 8vw;
+  cursor: pointer;
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
 }

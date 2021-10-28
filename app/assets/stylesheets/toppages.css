@@ -38,18 +38,7 @@ main{
 }
 .maintop{
 	height: calc(100vh - 200px);
-}
-
-.imag{
 	position: relative;
-	height: calc(100vh - 200px);
-}
-
-.imag img{
-	height: calc(100vh - 200px);
-	width: 100vw;
-	opacity: 0.5;
-	position: absolute;
 }
 
 /*各種作成ボタン*/
@@ -62,118 +51,82 @@ main{
 }
 
 .menubtn{
-	width: 15%;
-	text-decoration: none;
-	border: 2px solid greenyellow;
 	margin: 5% 0 0 25%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 	text-align: center;
 }
 .menubtn:active{
-	box-shadow: none;
-	margin: 5% 0 0 25.3%;
 	opacity: 0.8;
 }
 
 .guestbtn{
-	width: 15%;
 	text-align: center;
-	text-decoration: none;
-	border: 2px solid greenyellow;
 	margin: 12% 0 0 25%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 }
 .guestbtn:active{
-	box-shadow: none;
-	margin: 12% 0 0 25.3%;
 	opacity: 0.8;
 }
 
 .staffbtn{
-	text-decoration: none;
-	border: 2px solid greenyellow;
-	width: 15%;
 	margin: 20% 0 0 25%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 	text-align: center;
 }
 .staffbtn:active{
-	box-shadow: none;
-	margin: 20% 0 0 25.3%;
 	opacity: 0.8;
 }
 
 .checkroombtn{
-	text-decoration: none;
-	border: 2px solid greenyellow;
-	width: 15%;
 	margin: 5% 0 0 60%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 	text-align: center;
 }
 .checkroombtn:active{
-	box-shadow: none;
-	margin: 5% 0 0 60.3%;
 	opacity: 0.8;
 }
 
 .allsalebtn{
-	text-decoration: none;
-	border: 2px solid greenyellow;
 	margin: 20% 0 0 60%;
-	width: 15%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 	text-align: center;
 }
 .allsalebtn:active{
-	box-shadow: none;
-	margin: 20% 0 0 60.3%;
 	opacity: 0.8;
 }
 
 .shiftbtn{
-	width: 15%;
 	text-align: center;
-	text-decoration: none;
-	border: 2px solid greenyellow;
-	margin: 12% 0 0 60%;
+	margin: 28% 0 0 25%;
 	color: #000;
-	background-color: greenyellow;
 	cursor: pointer;
-	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 	position: absolute;
 }
 .shiftbtn:active{
-	box-shadow: none;
-	margin: 12% 0 0 60.3%;
 	opacity: 0.8;
 }
+
+.shift_listbtn{
+	text-align: center;
+	margin: 12% 0 0 60%;
+	color: #000;
+	cursor: pointer;
+	position: absolute;
+}
+.shift_listbtn:active{
+	opacity: 0.8;
+}
+
 /*下部*/
 footer{
 	height: 100px;

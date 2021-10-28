@@ -1,0 +1,93 @@
+<body>
+<header>
+  <div class="title">
+    SHIFT LIST
+  </div>
+<div class="todays">
+  <div class="today" id="view_clock"></div>
+</div>
+  <div class="login">
+    <%= link_to current_user.name, root_path(current_user), class: "shop" %>
+  </div>
+</header>
+<main>
+<div class="maintop">
+  <div class="searchall1">
+    <div class="search_list">
+      <div class="day">
+        出勤日
+      </div>
+      <div class="day">
+        スタッフ
+      </div>
+      <div class="day">
+        出勤時刻
+      </div>
+      <div class="day">
+        退勤時刻
+      </div>
+      <div class="day">
+        実働時間
+      </div>
+    </div>
+    <div class="searchall30">
+      <% @results.each do |shiftlist| %>
+      <div class="search1">
+        <div class="searchday">
+          <%= shiftlist.start_time.strftime('%Y/%m/%d') %>~<%= shiftlist.stop_time.strftime('%m/%d') %>
+        </div>
+        <div class="searchstaff">
+          <%= shiftlist.shift_staff%>
+        </div>
+        <div class="searchguest">
+          <%= shiftlist.start_time.strftime('%H:%M')%>
+        </div>
+        <div class="searchallprice">
+          <%= shiftlist.stop_time.strftime('%H:%M')%>
+        </div>
+        <div class="searchpayment">
+          <%= sliftall = shiftlist.stop_time - shiftlist.start_time %>
+          <% @sliftall = sliftall / 3600 %>
+          <% @sliftall.round(2) %>h
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="allprice_list">
+      <div class="allsalelogo">
+        
+      </div>
+      <div class="allsalelogo">
+        
+      </div>
+      <div class="allsalelogo">
+        
+      </div>
+      <div class="allsalelogo">
+        合計実働時間
+      </div>
+    </div>
+    <div class="searchalls">
+      <div class="searchall">
+        
+      </div>
+      <div class="searchall">
+        
+      </div>
+      <div class="searchall">
+        
+      </div>
+      <div class="searchall">
+        
+      </div>
+    </div>
+    <%= link_to '戻る', shift_lists_path, class:"top" %>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="logout">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'out'%>
+  </div>
+</footer>
+</body>

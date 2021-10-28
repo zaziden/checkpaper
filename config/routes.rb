@@ -14,5 +14,10 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :shifts 
+  resources :shifts
+  resources :shift_lists do
+    collection do
+      get 'search'
+    end
+  end
 end

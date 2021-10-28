@@ -9,15 +9,14 @@
 </header>
 <main>
   <div class="maintop">
-    <div class="imag">
-      <img src="/assets/img_logo_pc.jpeg" alt="">
       <div class="createbtn">
-        <%= link_to "メニュー", menus_path(current_user), class:"menubtn"%>
-        <%= link_to "ゲスト", guests_path(current_user), class:"guestbtn"%>
-        <%= link_to "スタッフ", staffs_path(current_user), class:"staffbtn"%>
-        <%= link_to "オーダー", checkrooms_path(current_user), class:"checkroombtn"%>
-        <%= link_to "セールス", allsales_path(current_user), class:"allsalebtn"%>
-        <%= link_to "シフト", shifts_path(current_user), class:"shiftbtn"%>
+        <%= link_to "メニュー登録、一覧", menus_path(current_user), class:"menubtn"%>
+        <%= link_to "ゲスト登録、一覧", guests_path(current_user), class:"guestbtn"%>
+        <%= link_to "スタッフ登録、一覧", staffs_path(current_user), class:"staffbtn"%>
+        <%= link_to "伝票作成", checkrooms_path(current_user), class:"checkroombtn"%>
+        <%= link_to "売上検索", allsales_path(current_user), class:"allsalebtn"%>
+        <%= link_to "タイムカード", shifts_path(current_user), class:"shiftbtn"%>
+        <%= link_to "勤怠データ", shift_lists_path(current_user), class:"shift_listbtn"%>
       </div>
     </div>
   </div>
