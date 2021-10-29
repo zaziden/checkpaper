@@ -1,5 +1,5 @@
 header{
-	height: 100px;
+	height: 8vh;
 	background-color: gray;
 	display: flex;
 	align-items: center;
@@ -7,7 +7,7 @@ header{
 }
 
 .title{
-	font-size: 50px;
+	font-size: 3vw;
 	margin-left: 60px;
 	font-family: Impact;
 	background-color: greenyellow;
@@ -19,7 +19,7 @@ header{
 	text-decoration: none;
 	border: 2px solid greenyellow;
 	margin: 0 60px 0 0;
-	font-size: 40px;
+	font-size: 2.5vw;
 	padding: 0 10px;
 	font-family: Impact;
 	background-color: greenyellow;
@@ -31,105 +31,119 @@ header{
 	margin: 0 55px 0 0px;
 	opacity: 0.8;
 }
+.shop:hover{
+	background-color: hotpink;
+	color: purple;
+	font-size: 3vw;
+	transition: all 0.2s;
+}
 
 /*メイン*/
-main{
-	height: 100%;
-}
 .maintop{
-	height: calc(100vh - 190px);
-	position: relative;
+	height: calc(100vh - 16vh);
 }
 
 /*各種作成ボタン*/
 .createbtn{
-	position: absolute;
-	margin: 50px 0 50px 0;
+	height: calc(100vh - 16vh);
 	width: 100vw;
-	height: calc(100vh - 200px);
+	padding: 3vh 0 0 0;
 	font-size: 2vw;
 }
 
+.btns{
+	height: 10%;
+	text-align: center;
+	margin: 0 0 3.5vh 0 ;
+}
+
 .menubtn{
-	margin: 5% 0 0 25%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
-	text-align: center;
 }
-.menubtn:active{
-	opacity: 0.8;
+.menubtn:hover{
+	color:red;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .guestbtn{
-	text-align: center;
-	margin: 12% 0 0 25%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
 }
-.guestbtn:active{
-	opacity: 0.8;
+.guestbtn:hover{
+	color:blue;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .staffbtn{
-	margin: 20% 0 0 25%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
-	text-align: center;
 }
-.staffbtn:active{
-	opacity: 0.8;
+.staffbtn:hover{
+	color:gold;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .checkroombtn{
-	margin: 5% 0 0 60%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
-	text-align: center;
 }
-.checkroombtn:active{
-	opacity: 0.8;
+.checkroombtn:hover{
+	color: green;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .allsalebtn{
-	margin: 20% 0 0 60%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
-	text-align: center;
 }
-.allsalebtn:active{
-	opacity: 0.8;
+.allsalebtn:hover{
+	color: purple;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .shiftbtn{
-	text-align: center;
-	margin: 28% 0 0 25%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
 }
-.shiftbtn:active{
-	opacity: 0.8;
+.shiftbtn:hover{
+	color:orange;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .shift_listbtn{
-	text-align: center;
-	margin: 12% 0 0 60%;
+	padding: 20px 0;
+	text-decoration: none;
 	color: #000;
 	cursor: pointer;
-	position: absolute;
 }
-.shift_listbtn:active{
-	opacity: 0.8;
+.shift_listbtn:hover{
+	color: pink;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 /*下部*/
 footer{
-	height: 100px;
+	height: 8vh;
 	width: 100%;
 	background-color: gray;
 	display: flex;
@@ -151,5 +165,11 @@ footer{
 .out:active{
 	box-shadow: none;
 	margin: 0 25px 0 0;
+}
+.out:hover{
+	background-color: hotpink;
+	color: purple;
+	font-size: 1.5vw;
+	transition: all 0.2s;
 }
 

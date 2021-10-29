@@ -2,7 +2,7 @@
   display: flex;
 }
 .maintop4{
-  height: calc(100vh - 200px);
+  height: calc(100vh - 16vh);
   width: 77%;
   display: flex;
 }

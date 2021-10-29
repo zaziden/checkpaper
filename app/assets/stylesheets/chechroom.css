@@ -1,6 +1,6 @@
 /*伝票サイドバー*/
 .maintop2{
-  height: calc(100vh - 200px);
+  height: calc(100vh - 16vh);
 	width: 33%;
 }
 .check_lists{

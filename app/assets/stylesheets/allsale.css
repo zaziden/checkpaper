@@ -70,9 +70,14 @@
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
 }
+.submit:hover{
+	color:red;
+	font-size: 2.5vw;
+	transition: all 0.2s;
+}
 /*トップメニュー*/
 .maintop5{
-	height: calc(100vh - 200px);
+	height: calc(100vh - 16vh);
   display: flex;
 }
 
