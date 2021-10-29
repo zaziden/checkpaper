@@ -34,7 +34,11 @@
       <% @results.each do |shiftlist| %>
       <div class="search1">
         <div class="searchday">
-          <%= shiftlist.start_time.strftime('%Y/%m/%d') %>~<%= shiftlist.stop_time.strftime('%m/%d') %>
+          <%= shiftlist.start_time.strftime('%Y/%m/%d') %>
+        <%if shiftlist.stop_time == nil %>
+        <% else %>
+          ~<%= shiftlist.stop_time.strftime('%m/%d') %>
+        <% end %>
         </div>
         <div class="searchstaff">
           <%= shiftlist.shift_staff%>
@@ -43,12 +47,21 @@
           <%= shiftlist.start_time.strftime('%H:%M')%>
         </div>
         <div class="searchallprice">
+        <%if shiftlist.stop_time == nil %>
+          勤務中、又は未入力
+        <% else %>
           <%= shiftlist.stop_time.strftime('%H:%M')%>
+        <% end %>
         </div>
         <div class="searchpayment">
-          <% sliftall = shiftlist.stop_time - shiftlist.start_time %>
-          <% @sliftall = sliftall / 3600 %>
-          <%= @sliftall.round(2) %>h
+        <%if shiftlist.stop_time == nil %>
+        <% else %>
+          <% stop = shiftlist.stop_time %>
+          <% start = shiftlist.start_time %>
+          <% shiftall = stop - start %>
+          <% @shiftall = shiftall / 3600.0 %>
+          <%= "#{@shiftall.floor}時間#{((@shiftall - @shiftall.floor)*60).ceil}分" %>
+        <% end %>
         </div>
       </div>
       <% end %>
@@ -78,7 +91,18 @@
         
       </div>
       <div class="searchall">
-        
+        <% a = 0 %>
+        <% @results.each do |shiftlist| %>
+        <%if shiftlist.stop_time == nil %>
+        <% else %>
+          <% stop = shiftlist.stop_time %>
+          <% start = shiftlist.start_time %>
+          <% shiftall = stop - start %>
+          <% a = a + shiftall %>
+        <%end%>
+        <% end %>
+        <% @a = a / 3600.0 %>
+        <%= "#{@a.floor}時間#{((@a - @a.floor)*60).ceil}分" %>
       </div>
     </div>
     <%= link_to '戻る', shift_lists_path, class:"top" %>
