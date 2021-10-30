@@ -86,9 +86,9 @@
 .menu_create{
 	position: fixed;
 	width: 400px;
-	height: 50vh;
+	height: 30vw;
 	left: -500px;
-  top: 10vw;
+  top: 20vh;
 	background-color: greenyellow;
 	transition: all 0.8s;
   border-radius: 5px;
