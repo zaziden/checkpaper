@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin: 30px 0;
+  height: 6%;
+  margin: 30px 0 40px 0;
   font-size: 1.5vw;
 }
 .message-date{
@@ -23,6 +24,14 @@
 .del{
   width: 10%;
   text-align: right;
+}
+.ou3{
+  text-decoration: none;
+}
+.ou3:hover{
+	color:red;
+	font-size: 1.7vw;
+	transition: all 0.2s;
 }
 .checkzumi{
   font-size: 1.6vw;

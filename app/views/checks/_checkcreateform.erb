@@ -36,7 +36,7 @@
           <%= f.collection_select :menuprice, @menus, :price, :menu_name, {include_blank: "メニュー選択"}, {class:"menuname", id:"ab",onchange:"myfunc()"} %>
         </div>
         <div class="check_create_link">
-          <%= link_to 'メニュー登録へ', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
+          <%= link_to 'メニュー登録', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %>
         </div>
         <div class="check_create_count">
           <%= f.number_field :cup, value: 1,step: "1", min: "1", class: 'cups', placeholder: '注文数', id: 'gh', size: 4 , onchange:"myfunc()" %> 

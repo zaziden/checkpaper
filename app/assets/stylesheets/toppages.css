@@ -10,9 +10,11 @@ header{
 	font-size: 3vw;
 	margin-left: 60px;
 	font-family: Impact;
-	background-color: greenyellow;
-	border-radius: 5px;
-	padding: 0 10px;
+}
+.title:hover{
+	color:red;
+	font-size: 3vw;
+	transition: all 0.2s;
 }
 
 .shop{
@@ -41,6 +43,7 @@ header{
 /*メイン*/
 .maintop{
 	height: calc(100vh - 16vh);
+	overflow: scroll;
 }
 
 /*各種作成ボタン*/
@@ -152,6 +155,7 @@ footer{
 }
 
 .out{
+	font-size: 1vw;
 	text-decoration: none;
 	border: 1px solid black;
 	padding: 15px;

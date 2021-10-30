@@ -6,6 +6,7 @@
 }
 .list_menu_list{
   height: 68%;
+  width: 100%;
   position: relative;
   overflow: scroll;
 }
@@ -22,8 +23,27 @@
 .menu_list{
   font-size: 1.5vw;
   margin-bottom: 20px;
+  width: 60%;
 }
 .menu_list_price{
+  width: 30%;
   font-size: 1.5vw;
   margin-bottom: 20px;
+  text-align: right;
+}
+.menu-dele{
+  width: 10%;
+  height: 50px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 1.5vw;
+}
+.ou1{
+  text-decoration: none;
+  padding: 10px 0;
+}
+.ou1:hover{
+	color:red;
+	font-size: 2.5vw;
+	transition: all 0.2s;
 }

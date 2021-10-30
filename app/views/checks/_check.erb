@@ -12,9 +12,11 @@
     ¥<%= check.menuallprice %>
   </div> 
   <div class="del">
-    <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
-    <% else %>
-    <%= link_to "取消", checkroom_check_path(@checkrooms,check), method: :delete, data: {"turbolinks" => false} %>
-    <% end %>
+    <div>
+      <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+      <% else %>
+      <%= link_to "取消", checkroom_check_path(@checkrooms,check), method: :delete, data: {"turbolinks" => false},class: 'ou3' %>
+      <% end %>
+    </div>
   </div>
 </div>

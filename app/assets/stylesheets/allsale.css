@@ -24,10 +24,15 @@
   border-radius: 5px;
 	box-shadow: 2px 2px #000;
   width: 5vw;
+  padding: 5px 0;
 }
 .o:active{
 	box-shadow: none;
 	opacity: 0.8;
+}
+.o:hover{
+	color:red;
+	transition: all 0.2s;
 }
 .o2{
   font-size: 1.5vw;
@@ -65,14 +70,16 @@
   font-size: 2.0vw;
 }
 .submit{
-  width: 8vw;
+  padding: 10px;
+  width: 7vw;
+  height: 65px;
   cursor: pointer;
   border-radius: 5px;
 	box-shadow: 5px 5px #000;
 }
 .submit:hover{
 	color:red;
-	font-size: 2.5vw;
+	font-size: 1.8vw;
 	transition: all 0.2s;
 }
 /*トップメニュー*/
@@ -155,4 +162,10 @@
 }
 .top{
   font-size: 2vw;
+}
+.top:hover{
+	color:red;
+	font-size: 2.5vw;
+	transition: all 0.2s;
+  text-decoration: none;
 }

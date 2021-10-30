@@ -10,6 +10,7 @@
 .check_room_show{
   width: 50%;
   height: 100%;
+  overflow: scroll;
 }
 .check_room_names{
   display: flex;
@@ -30,6 +31,7 @@
   position: relative;
 }
 .check_create_form{
+  width: 50%;
   text-align: center;
   position: absolute;
   top: 30%;
@@ -51,6 +53,7 @@
 }
 .check_create_link{
   margin-bottom: 15px;
+  height: 30px;
 }
 .check_create_count{
   font-size: 1.5vw;
@@ -76,12 +79,17 @@
   width: 5vw;
   border-radius: 5px;
 	box-shadow: 2px 2px #000;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
 }
 .drinkmenu:active{
 	box-shadow: none;
 	opacity: 0.8;
 }
+.drinkmenu:hover{
+	color:red;
+	transition: all 0.2s;
+}
+
 .drinkmenu2{
   width: 100px;
 }
