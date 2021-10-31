@@ -9,23 +9,6 @@
 </header>
 <main>
 <div class="maintop5">
-  <div class="main_menu">
-    <div class="title_a">
-      トップメニュー
-    </div>
-    <div class="top_menu_lists">
-      <div class="top_memu_list">
-        <ul>
-          <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to '勤怠データ', shift_lists_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-          <li><%= link_to 'タイムカード', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
   <div class="search">
     <div class="searchs">
       <div class="wa">売上検索</div>
@@ -44,6 +27,23 @@
           <%= f.submit 'Push', class: 'action-btn'%>
         </div>
       <% end %>
+    </div>
+  </div>
+  <div class="main_menu">
+    <div class="title_a">
+      トップメニュー
+    </div>
+    <div class="top_menu_lists">
+      <div class="top_memu_list">
+        <ul>
+          <li><%= link_to '伝票', checkrooms_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to '勤怠データ', shift_lists_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'メニュー', menus_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'ゲスト', guests_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'スタッフ', staffs_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+          <li><%= link_to 'タイムカード', shifts_path(current_user), data: {"turbolinks" => false}, class: "menubtn1" %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

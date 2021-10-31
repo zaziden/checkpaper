@@ -43,7 +43,6 @@ header{
 /*メイン*/
 .maintop{
 	height: calc(100vh - 16vh);
-	overflow: scroll;
 }
 
 /*各種作成ボタン*/
