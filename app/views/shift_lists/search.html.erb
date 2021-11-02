@@ -41,7 +41,7 @@
         <% end %>
         </div>
         <div class="searchstaff">
-          <%= shiftlist.shift_staff%>
+          <%= link_to shiftlist.shift_staff, edit_shift_path(shiftlist.id), data: {"turbolinks" => false}, class: 'ou' %>
         </div>
         <div class="searchguest">
           <%= shiftlist.start_time.strftime('%H:%M')%>
@@ -58,7 +58,7 @@
         <% else %>
           <% shiftall = shiftlist.stop_time - shiftlist.start_time %>
           <% @shiftall = shiftall / 3600.0 %>
-          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).round}分" %>
+          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).floor}分" %>
         <% end %>
         </div>
       </div>
@@ -72,7 +72,7 @@
         
       </div>
       <div class="allsalelogo">
-        
+        合計出勤回数
       </div>
       <div class="allsalelogo">
         合計実働時間
@@ -86,7 +86,14 @@
         
       </div>
       <div class="searchall">
-        
+        <% b = 0 %>
+        <% @results.each do |shiftlist| %>
+        <%if shiftlist.stop_time == nil %>
+        <% else %>
+          <% b = b + 1 %>
+        <%end%>
+        <% end %>
+        <%= b %>回
       </div>
       <div class="searchall">
         <% a = 0 %>
@@ -98,7 +105,7 @@
         <%end%>
         <% end %>
         <% @a = a / 3600.0 %>
-        <%= "#{@a.floor}時間#{((@a.floor(3) - @a.floor)*60).floor}分" %>
+        <%= "#{@a.floor}時間#{((@a.floor(3) - @a.floor)*60).round}分" %>
       </div>
     </div>
     <%= link_to '戻る', shift_lists_path, class:"top" %>

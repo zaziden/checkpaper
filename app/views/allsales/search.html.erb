@@ -79,7 +79,7 @@
         ¥<%= @results.where(payment:'電子マネー').sum(:allprice) %>
       </div>
     </div>
-    <%= link_to '戻る', allsales_path, class:"top" %>
+    <%= link_to '戻る', allsales_path(@allsale), class:"top" %>
   </div>
 </div>
 </main>

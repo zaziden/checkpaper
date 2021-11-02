@@ -1,3 +1,131 @@
-.shift_list{
-  
-}
+<body>
+<header>
+  <div class="title">
+    SHIFT LIST 編集
+  </div>
+<div class="todays">
+  <div class="today" id="view_clock"></div>
+</div>
+  <div class="login">
+    <%= link_to current_user.name, root_path(current_user), class: "shop" %>
+  </div>
+</header>
+<main>
+<div class="maintop">
+  <div class="searchall1">
+    <div class="search_list">
+      <div class="day">
+        出勤日
+      </div>
+      <div class="day">
+        スタッフ
+      </div>
+      <div class="day">
+        出勤時刻
+      </div>
+      <div class="day">
+        退勤時刻
+      </div>
+      <div class="day">
+        実働時間
+      </div>
+    </div>
+
+    <div class="searchall30">
+      <div class="search1">
+        <div class="searchday">
+          <%= @shift.start_time.strftime('%Y/%m/%d') %>
+        <%if @shift.stop_time == nil %>
+        <% else %>
+          ~<%= @shift.stop_time.strftime('%m/%d') %>
+        <% end %>
+        </div>
+        <div class="searchstaff">
+          <%= @shift.shift_staff %>
+        </div>
+        <div class="searchguest">
+          <%= @shift.start_time.strftime('%H:%M')%>
+        </div>
+        <div class="searchallprice">
+        <%if @shift.stop_time == nil %>
+          勤務中、又は未入力
+        <% else %>
+          <%= @shift.stop_time.strftime('%H:%M')%>
+        <% end %>
+        </div>
+        <div class="searchpayment">
+        <%if @shift.stop_time == nil %>
+        <% else %>
+          <% shiftall = @shift.stop_time - @shift.start_time %>
+          <% @shiftall = shiftall / 3600.0 %>
+          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).floor}分" %>
+        <% end %>
+        </div>
+      </div>
+
+      <div class="search1">
+        <div class="searchday">
+          修正フォーム 
+        </div>
+        <div class="searchstaff">
+        <%=form_with model: @shift, local: true do |f|%>
+          <%= f.collection_select :shift_staff, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'shift_staff_serect1' %>
+        </div>
+        <div class="searchguest">
+          <%= f.datetime_field :start_time, value:@shift.start_time.strftime('%Y-%m-%dT%R'), class: 'start1' %>
+        </div>
+        <div class="searchallprice">
+        <%if @shift.stop_time == nil %>
+          勤務中、又は未入力
+        <% else %>
+          <%= f.datetime_field :stop_time, value:@shift.stop_time.strftime('%Y-%m-%dT%R'), class: 'start1' %>
+        <% end %>
+        </div>
+        <div class="searchpayment">
+          <%= f.submit '修正する', :name => 'update',class: 'action-btn1' %>
+        <%end%>
+        </div>
+      </div>
+    </div>
+    
+    <div class="allprice_list">
+      <div class="allsalelogo">
+        
+      </div>
+      <div class="allsalelogo">
+        
+      </div>
+      <div class="allsalelogo">
+        作成日
+      </div>
+      <div class="allsalelogo">
+        最終修正日
+      </div>
+    </div>
+    <div class="searchalls">
+      <div class="searchall">
+        
+      </div>
+      <div class="searchall">
+        
+      </div>
+      <div class="searchall">
+          <%= @shift.created_at.strftime("%Y/%m/%d %H:%M") %>
+      </div>
+      <div class="searchall">
+        <%if @shift.stop_time == nil %>
+        <% else %>
+          <%= @shift.updated_at.strftime("%Y/%m/%d %H:%M") %>
+        <%end%>
+      </div>
+    </div>
+    <%= link_to '戻る', shift_lists_path, class:"top" %>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="logout">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'out'%>
+  </div>
+</footer>
+</body>

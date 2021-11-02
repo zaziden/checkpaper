@@ -41,3 +41,14 @@
 .ou{
   text-decoration: none;
 }
+
+/*編集画面*/
+.start1{
+  width: 80%;
+  font-size: 70%;
+}
+.action-btn1:hover{
+	color:red;
+	font-size: 2vw;
+	transition: all 0.2s;
+}

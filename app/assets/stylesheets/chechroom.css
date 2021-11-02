@@ -86,9 +86,9 @@
 .menu_create{
 	position: fixed;
 	width: 400px;
-	height: 30vw;
+	height: 400px;
 	left: -500px;
-  top: 20vh;
+  top: 10vh;
 	background-color: greenyellow;
 	transition: all 0.8s;
   border-radius: 5px;
@@ -97,6 +97,7 @@
 }
 .clicked .menu_create{
 	left: 100px;
+	top:10vh;
 }
 .create_form{
   position: absolute;

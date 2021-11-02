@@ -15,11 +15,22 @@ class ShiftsController < ApplicationController
     end
   end
 
+  def edit
+    @shift = current_user.shifts.find(params[:id])
+    @staff = Staff.where(user_id: current_user.id)
+  end
+
   def update
     @shift = current_user.shifts.find(params[:id])
-    @shift.update(stop_time: Time.now)
-    flash[:notice] = "退勤時間#{Time.now.strftime('%H:%M')}登録完了"
-    redirect_to shifts_path(current_user)
+    if params['update']
+      @staff = Staff.where(user_id: current_user.id)
+      @shift.update(shift_params)
+      redirect_to edit_shift_path(@shift.id)
+    else params['退勤']
+      @shift.update(stop_time: Time.now)
+      flash[:notice] = "退勤時間#{Time.now.strftime('%H:%M')}登録完了"
+      redirect_to shifts_path(current_user)
+    end
   end
 
   def destroy

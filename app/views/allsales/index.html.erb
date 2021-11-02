@@ -14,8 +14,10 @@
       <div class="wa">売上検索</div>
       <%= search_form_for @q, url: search_allsales_path do |f| %>
         <div class="wb">
-          <%= f.date_field :created_at_gteq,value: Time.now.beginning_of_month.strftime("%Y-%m-%d") %> ~
-          <%= f.date_field :created_at_lteq_end_of_day %>
+          <%= f.datetime_field :created_at_gteq,value: Time.now.beginning_of_month.strftime("%Y-%m-%dT00:00:00") %>~
+        </div> 
+        <div class="wb">
+          <%= f.datetime_field :created_at_lteq_end_of_day %>
         </div>
         <div class="wc">
           <%= f.collection_select :checkstaff_eq, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'wf' %>

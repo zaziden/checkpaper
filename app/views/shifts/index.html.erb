@@ -51,7 +51,10 @@
                 <%= shift.start_time.strftime('%H:%M') %>
               </div>
               <div class="shift_stop_time">
-                <%= link_to '退勤する', shift_path(shift.id), method: :patch, data: {"turbolinks" => false}, class: 'ou'%>
+              <%=form_with model: shift, method: :patch,local: true do |f|%>
+                <%= f.hidden_field :stop_time, value:Time.now, class: 'start' %>
+                <%= f.submit '退勤する', :name => '退勤',class: 'action-btn1'%>
+              <% end %>
               </div>
               <div class="shift_delete">
                 <%= link_to '削除', shift_path(shift.id), method: :delete, data: {"turbolinks" => false}, class: 'ou'%>
