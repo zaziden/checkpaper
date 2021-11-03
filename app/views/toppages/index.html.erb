@@ -11,22 +11,22 @@
   <div class="maintop">
       <div class="createbtn">
         <div class="btns">
+          <%= link_to "スタッフ登録,一覧", staffs_path(current_user), class:"staffbtn"%>
+        </div>
+        <div class="btns">
           <%= link_to "メニュー登録,一覧", menus_path(current_user), class:"menubtn"%>
         </div>
         <div class="btns">
           <%= link_to "ゲスト登録,一覧", guests_path(current_user), class:"guestbtn"%>
         </div>
         <div class="btns">
-          <%= link_to "スタッフ登録,一覧", staffs_path(current_user), class:"staffbtn"%>
-        </div>
-        <div class="btns">
           <%= link_to "伝票作成", checkrooms_path(current_user), class:"checkroombtn"%>
         </div>
         <div class="btns">
-          <%= link_to "売上検索", allsales_path(current_user), class:"allsalebtn"%>
+          <%= link_to "タイムカード", shifts_path(current_user), class:"shiftbtn"%>
         </div>
         <div class="btns">
-          <%= link_to "タイムカード", shifts_path(current_user), class:"shiftbtn"%>
+          <%= link_to "売上データ", allsales_path(current_user), class:"allsalebtn"%>
         </div>
         <div class="btns">
           <%= link_to "勤怠データ", shift_lists_path(current_user), class:"shift_listbtn"%>
