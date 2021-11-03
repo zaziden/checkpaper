@@ -1,10 +1,10 @@
 <body>
 <header>
   <div class="title">
-    ALL SALES SEARCH
+    売上データ
   </div>
   <div class="login">
-    <%= link_to current_user.name, root_path(current_user), class: "shop" %>
+    ショップ名:<%= link_to current_user.name, root_path(current_user), class: "shop" %>
   </div>
 </header>
 <main>
@@ -14,7 +14,7 @@
       <div class="wa">売上検索</div>
       <%= search_form_for @q, url: search_allsales_path do |f| %>
         <div class="wb">
-          <%= f.datetime_field :created_at_gteq,value: Time.now.beginning_of_month.strftime("%Y-%m-%dT00:00:00") %>~
+          <%= f.datetime_field :created_at_gteq,value: Time.now.prev_month.beginning_of_month.strftime("%Y-%m-%dT00:00:00") %>~
         </div> 
         <div class="wb">
           <%= f.datetime_field :created_at_lteq_end_of_day %>

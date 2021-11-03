@@ -1,13 +1,13 @@
 <body>
 <header>
   <div class="title">
-    STAFF LIST
+    スタッフ登録,一覧
   </div>
   <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
   <% end %>
   <div class="login">
-    <%= link_to current_user.name, root_path(current_user), class: "shop" %>
+    ショップ名:<%= link_to current_user.name, root_path(current_user), class: "shop" %>
   </div>
 </header>
 

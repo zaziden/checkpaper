@@ -7,36 +7,23 @@ header{
 }
 
 .title{
-	font-size: 3vw;
+	font-size: 2vw;
 	margin-left: 60px;
-	font-family: Impact;
-}
-.title:hover{
-	color:red;
-	font-size: 3vw;
-	transition: all 0.2s;
 }
 
 .shop{
 	text-decoration: none;
-	border: 2px solid greenyellow;
 	margin: 0 60px 0 0;
-	font-size: 2.5vw;
+	font-size: 1.5vw;
 	padding: 0 10px;
-	font-family: Impact;
-	background-color: greenyellow;
 	border-radius: 5px;
-	box-shadow: 5px 5px #000;
 }
 .shop:active{
-	box-shadow: none;
 	margin: 0 55px 0 0px;
 	opacity: 0.8;
 }
 .shop:hover{
-	background-color: hotpink;
-	color: purple;
-	font-size: 3vw;
+	color:red;
 	transition: all 0.2s;
 }
 
@@ -156,11 +143,11 @@ footer{
 .out{
 	font-size: 1vw;
 	text-decoration: none;
-	border: 1px solid black;
+	border: 2px solid greenyellow;
 	padding: 15px;
 	margin-right: 30px;
 	color: #000;
-	background-color: cadetblue;
+	background-color: greenyellow;
 	box-shadow: 5px 5px #000;
 	cursor: pointer;
 	border-radius: 5px;
