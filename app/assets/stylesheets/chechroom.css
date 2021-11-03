@@ -113,14 +113,25 @@
 }
 .check_list_form1{
   padding-bottom: 10px;
+	width: 200px;
+}
+.check_list_form2{
+  padding-bottom: 10px;
+	width: 200px;
+	position: relative;
 }
 .check_list_link{
   padding-bottom: 10px;
 }
 .check_howmany_input{
-  font-size: 1vw;
-  width: 70%;
+  font-size: 1.5vw;
+  width: 30%;
   text-align: center;
+}
+.name{
+	position: absolute;
+	margin-left: 35%;
+	margin-top: -2.2vw;
 }
 .action-btn{
 	width: 100px;

@@ -14,7 +14,7 @@
       <div class="wa">勤怠データ検索</div>
       <%= search_form_for @q, url: search_shift_lists_path do |f| %>
         <div class="wb">
-          <%= f.date_field :created_at_gteq,value: Time.now.prev_month.beginning_of_month.strftime("%Y-%m-%d") %> ~
+          <%= f.date_field :created_at_gteq,value: Time.now.beginning_of_month.strftime("%Y-%m-%d") %> ~
           <%= f.date_field :created_at_lteq_end_of_day %>
         </div>
         <div class="wc">

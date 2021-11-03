@@ -48,8 +48,8 @@
           <div class="check_list_label">
             <%= f.label 'How Many People?', class: 'price-label'%>
           </div>
-          <div class="check_list_form1">
-            <%= f.number_field :how_many, step: "1", min: "1",class: 'check_howmany_input', placeholder: '何名様ですか?' %>
+          <div class="check_list_form2">
+            <%= f.number_field :how_many, value:1, step: "1", min: "1",class: 'check_howmany_input' %><p class="name">名様</p>
           </div>
           <div class="check_list_form1">
             <% if current_user.id %>
