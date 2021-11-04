@@ -144,11 +144,11 @@ footer{
 	font-size: 1vw;
 	text-decoration: none;
 	border: 2px solid greenyellow;
-	padding: 15px;
+	padding: 0.5vw;
 	margin-right: 30px;
 	color: #000;
 	background-color: greenyellow;
-	box-shadow: 5px 5px #000;
+	box-shadow: 3px 3px #000;
 	cursor: pointer;
 	border-radius: 5px;
 }
