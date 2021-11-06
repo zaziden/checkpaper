@@ -1,7 +1,7 @@
 <body>
 <header>
   <div class="title">
-    タイムカード 編集
+    伝票 編集
   </div>
 <div class="todays">
   <% if flash[:notice] %>
@@ -17,51 +17,37 @@
   <div class="searchall1">
     <div class="search_list">
       <div class="day">
-        出勤日
+        
       </div>
       <div class="day">
-        スタッフ
+        お客様名
       </div>
       <div class="day">
-        出勤時刻
+        担当スタッフ
       </div>
       <div class="day">
-        退勤時刻
+        客数
       </div>
       <div class="day">
-        実働時間
       </div>
     </div>
 
     <div class="searchall30">
       <div class="search1">
         <div class="searchday">
-          <%= @shift.start_time.strftime('%Y/%m/%d') %>
-        <%if @shift.stop_time == nil %>
-        <% else %>
-          ~<%= @shift.stop_time.strftime('%m/%d') %>
-        <% end %>
+         
         </div>
         <div class="searchstaff">
-          <%= @shift.shift_staff %>
+          <%= @checkrooms.room_name %>
         </div>
         <div class="searchguest">
-          <%= @shift.start_time.strftime('%H:%M')%>
+          <%= @checkrooms.staff_name %>
         </div>
         <div class="searchallprice">
-        <%if @shift.stop_time == nil %>
-          勤務中、又は未入力
-        <% else %>
-          <%= @shift.stop_time.strftime('%H:%M')%>
-        <% end %>
+          <%= @checkrooms.how_many %>名様
         </div>
         <div class="searchpayment">
-        <%if @shift.stop_time == nil %>
-        <% else %>
-          <% shiftall = @shift.stop_time - @shift.start_time %>
-          <% @shiftall = shiftall / 3600.0 %>
-          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).floor}分" %>
-        <% end %>
+        
         </div>
       </div>
 
@@ -70,18 +56,14 @@
           <P class="s">修正フォーム　→</p>
         </div>
         <div class="searchstaff">
-        <%=form_with model: @shift, local: true do |f|%>
-          <%= f.collection_select :shift_staff, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'shift_staff_serect1' %>
+        <%=form_with model: @checkrooms, local: true do |f|%>
+          <%= f.collection_select :room_name, @guest, :guest_name, :guest_name, include_blank: "ゲスト選択", class: 'shift_staff_serect1' %>
         </div>
         <div class="searchguest">
-          <%= f.datetime_field :start_time, value:@shift.start_time.strftime('%Y-%m-%dT%R'), class: 'start1' %>
+          <%= f.collection_select :staff_name, @staff, :nickname, :nickname, include_blank: "スタッフ選択", class: 'shift_staff_serect1' %>
         </div>
         <div class="searchallprice">
-        <%if @shift.stop_time == nil %>
-          勤務中、又は未入力
-        <% else %>
-          <%= f.datetime_field :stop_time, value:@shift.stop_time.strftime('%Y-%m-%dT%R'), class: 'start1' %>
-        <% end %>
+          <%= f.number_field :how_many, value:@checkrooms.how_many, step: "1", min: "1",class: 'check_howmany_input' %>名様
         </div>
         <div class="searchpayment">
           <%= f.submit '修正する', :name => 'update',class: 'action-btn1' %>
@@ -98,10 +80,10 @@
         
       </div>
       <div class="allsalelogo">
-        初回作成日
+        初回作成時間
       </div>
       <div class="allsalelogo">
-        最終修正日
+        最終修正時間
       </div>
     </div>
     <div class="searchalls">
@@ -112,16 +94,13 @@
         
       </div>
       <div class="searchall">
-          <%= @shift.created_at.strftime("%Y/%m/%d %H:%M") %>
+        <%= @checkrooms.created_at.strftime("%m/%d %H:%M") %>
       </div>
       <div class="searchall">
-        <%if @shift.stop_time == nil %>
-        <% else %>
-          <%= @shift.updated_at.strftime("%Y/%m/%d %H:%M") %>
-        <%end%>
+        <%= @checkrooms.updated_at.strftime(" %m/%d %H:%M") %>
       </div>
     </div>
-    <%= link_to '戻る', shift_lists_path, class:"top" %>
+    <%= link_to '戻る', checkrooms_path, class:"top" %>
   </div>
 </div>
 </main>

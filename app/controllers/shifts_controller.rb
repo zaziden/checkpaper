@@ -25,6 +25,7 @@ class ShiftsController < ApplicationController
     if params['update']
       @staff = Staff.where(user_id: current_user.id)
       @shift.update(shift_params)
+      flash[:notice] = "修正内容を登録しました"
       redirect_to edit_shift_path(@shift.id)
     else params['退勤']
       @shift.update(stop_time: Time.now)

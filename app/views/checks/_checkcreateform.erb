@@ -5,7 +5,7 @@
     </div>
     <div class="check_room_names">
       <div class="check_room_name">
-        <%= @checkrooms.room_name %>
+        <%= link_to @checkrooms.room_name, edit_checkroom_path(@checkrooms.id), data: {"turbolinks" => false}, class: 'ou' %>
       </div>
       <div class="check_hawmany">
         <%= @checkrooms.how_many%>名

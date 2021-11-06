@@ -54,6 +54,7 @@
 .check_create_link{
   margin-bottom: 15px;
   height: 30px;
+  padding:10px 0;
 }
 .check_create_count{
   font-size: 1.5vw;

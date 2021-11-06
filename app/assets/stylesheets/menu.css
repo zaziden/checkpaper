@@ -36,7 +36,7 @@
   height: 50px;
   margin-bottom: 20px;
   text-align: right;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 .ou1{
   text-decoration: none;
@@ -46,4 +46,5 @@
 	color:red;
 	font-size: 2.5vw;
 	transition: all 0.2s;
+  padding: 10px 0;
 }

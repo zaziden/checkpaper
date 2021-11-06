@@ -20,6 +20,21 @@ class CheckroomsController < ApplicationController
     end
   end
 
+  def edit
+    @checkrooms = current_user.checkrooms.find(params[:id])
+    @guest = Guest.where(user_id: current_user.id)
+    @staff = Staff.where(user_id: current_user.id)
+  end
+
+  def update
+    @checkrooms = current_user.checkrooms.find(params[:id])
+    @guest = Guest.where(user_id: current_user.id)
+    @staff = Staff.where(user_id: current_user.id)
+      @checkrooms.update(checkroom_params)
+      flash[:notice] = "修正内容を登録しました"
+      redirect_to edit_checkroom_path(@checkrooms.id)
+  end
+
   def destroy
     checkroom = Checkroom.find(params[:id])
     checkroom.destroy

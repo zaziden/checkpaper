@@ -57,6 +57,12 @@
 	top: 26px;
 }
 
+.title_b{
+  height: 10%;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 100%;
+}
 .check_list{
   height: 50%;
   position: relative;

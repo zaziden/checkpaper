@@ -58,7 +58,7 @@
         <% else %>
           <% shiftall = shiftlist.stop_time - shiftlist.start_time %>
           <% @shiftall = shiftall / 3600.0 %>
-          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).floor}分" %>
+          <%= "#{@shiftall.floor}時間#{((@shiftall.floor(3) - @shiftall.floor)*60).floor }分" %>
         <% end %>
         </div>
       </div>
@@ -96,16 +96,16 @@
         <%= b %>回
       </div>
       <div class="searchall">
-        <% a = 0 %>
+        <% @a = 0 %>
         <% @results.each do |shiftlist| %>
         <%if shiftlist.stop_time == nil %>
         <% else %>
           <% shiftall = shiftlist.stop_time - shiftlist.start_time %>
-          <% a = a + shiftall %>
+          <% a = shiftall / 3600.0 %>
+          <% @a = @a + a.floor(3) %>
         <%end%>
         <% end %>
-        <% @a = a / 3600.0 %>
-        <%= "#{@a.floor}時間#{((@a.floor(3) - @a.floor)*60).round}分" %>
+        <%= "#{@a.floor}時間#{((@a.floor(3) - @a.floor)*60).floor }分" %>
       </div>
     </div>
     <%= link_to '戻る', shift_lists_path, class:"top" %>
