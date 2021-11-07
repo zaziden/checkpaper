@@ -39,6 +39,6 @@ class AllsalesController < ApplicationController
   end
 
   def allsale_params
-    params.require(:allsale).permit(:allprice, :payment).merge(user_id: current_user.id, checkroom_id: @checkrooms.id, checkstaff: @checkrooms.staff_name, checkguest: @checkrooms.room_name)
+    params.require(:allsale).permit(:allprice, :payment).merge(user_id: current_user.id, checkroom_id: @checkrooms.id, checkstaff: @checkrooms.staff_name, checkguest: @checkrooms.room_name, howmany: @checkrooms.how_many)
   end
 end

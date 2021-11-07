@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_053529) do
+ActiveRecord::Schema.define(version: 2021_11_07_031859) do
 
   create_table "allsales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "allprice"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_10_19_053529) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.string "payment"
+    t.integer "howmany"
     t.index ["checkroom_id"], name: "index_allsales_on_checkroom_id"
     t.index ["deleted_at"], name: "index_allsales_on_deleted_at"
     t.index ["user_id"], name: "index_allsales_on_user_id"
@@ -56,7 +57,6 @@ ActiveRecord::Schema.define(version: 2021_10_19_053529) do
 
   create_table "guests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "guest_name", null: false
-    t.integer "gender", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

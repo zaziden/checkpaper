@@ -27,11 +27,9 @@
             <%= f.text_field :guest_name, placeholder: 'お客様名を入力'%>
           </div>
           <div class="form_staff_label">
-            <%= f.label 'Gender', class: 'price-label'%>
+            
           </div>
-          <div class="form_staff_text">
-             <%= f.select :gender, {'男性': 1, '女性': 2, 'その他': 3}, { include_blank: '性別選択'}, { class: 'chat__room_name chat-room-form__input' } %>
-          </div>
+         
           <div class="form_staff_btn">
             <%= f.submit 'Push', class: 'action-btn'%>
           </div>

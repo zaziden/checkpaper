@@ -53,7 +53,7 @@
 
       <div class="search1">
         <div class="searchday">
-          <P class="s">修正フォーム　→</p>
+          <P class="s">編集フォーム　→</p>
         </div>
         <div class="searchstaff">
         <%=form_with model: @checkrooms, local: true do |f|%>
@@ -66,7 +66,7 @@
           <%= f.number_field :how_many, value:@checkrooms.how_many, step: "1", min: "1",class: 'check_howmany_input' %>名様
         </div>
         <div class="searchpayment">
-          <%= f.submit '修正する', :name => 'update',class: 'action-btn1' %>
+          <%= f.submit '編集する', :name => 'update',class: 'action-btn1' %>
         <%end%>
         </div>
       </div>
@@ -83,7 +83,7 @@
         初回作成時間
       </div>
       <div class="allsalelogo">
-        最終修正時間
+        最終編集時間
       </div>
     </div>
     <div class="searchalls">
@@ -100,7 +100,7 @@
         <%= @checkrooms.updated_at.strftime(" %m/%d %H:%M") %>
       </div>
     </div>
-    <%= link_to '戻る', checkrooms_path, class:"top" %>
+    <%= link_to '戻る', checkroom_checks_path(@checkrooms), class:"top" %>
   </div>
 </div>
 </main>

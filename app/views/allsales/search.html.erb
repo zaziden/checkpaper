@@ -21,7 +21,7 @@
         担当スタッフ
       </div>
       <div class="day">
-        ゲスト
+        ゲスト名、人数
       </div>
       <div class="day">
         支払済料金
@@ -40,7 +40,7 @@
           <%= allsale.checkstaff%>
         </div>
         <div class="searchguest">
-          <%= allsale.checkguest%>
+          <%= allsale.checkguest%>　<%= allsale.howmany%>名
         </div>
         <div class="searchallprice">
           ¥<%= allsale.allprice%>
@@ -56,6 +56,9 @@
         合計
       </div>
       <div class="allsalelogo">
+        客単価
+      </div>
+      <div class="allsalelogo">
         現金
       </div>
       <div class="allsalelogo">
@@ -68,6 +71,9 @@
     <div class="searchalls">
       <div class="searchall">
         ¥<%= @results.sum(:allprice) %>
+      </div>
+      <div class="searchall">
+        ¥<%= @results.sum(:allprice) / @results.sum(:howmany) %>
       </div>
       <div class="searchall">
         ¥<%= @results.where(payment:'現金').sum(:allprice) %>
