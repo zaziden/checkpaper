@@ -14,7 +14,11 @@
       <div class="check_list_names">
         <% current_user.checkrooms.order(:id).each do |checkroom| %>
           <div class="check_list_name">
-            <%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %>
+          <% if Allsale.exists?(checkroom_id: checkroom.id) %>
+            <p class="zumi"><%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %> 清算済</p>
+          <% elsif %>
+            <p class="zumi"><%= link_to checkroom.room_name, checkroom_checks_path(checkroom), data: {"turbolinks" => false}, class: 'room-name5' %></p>
+          <%end%>
           </div>
         <% end %> 
       </div>

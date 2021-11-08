@@ -148,6 +148,12 @@
   width: 100%;
 }
 .allsalelogo{
+  width: 20%;
+  font-size: 1.5vw;
+  color:red;
+  text-align: center;
+}
+.allsalelogo2{
   width: 25%;
   font-size: 1.5vw;
   color:red;
@@ -159,9 +165,15 @@
   width: 100%;
 }
 .searchall{
+  width: 20%;
+  margin: 20px 0 0 0 ;
+  font-size: 1.5vw;
+  text-align: center;
+}
+.searchall2{
   width: 25%;
   margin: 20px 0 0 0 ;
-  font-size: 2vw;
+  font-size: 1.5vw;
   text-align: center;
 }
 .top{

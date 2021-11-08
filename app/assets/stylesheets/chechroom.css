@@ -82,6 +82,12 @@
 .check_list_name{
   margin-bottom: 30px;
 	height: 40px;
+	display: flex;
+	justify-content: start;
+}
+.zumi{
+	padding: 15px 0 ;
+	font-size: 1vw;
 }
 .room-name5{
   font-size: 2vw;
@@ -91,7 +97,7 @@
 }
 .room-name5:hover{
 	color:red;
-	font-size: 2.5vw;
+	font-size: 1.5vw;
 	transition: all 0.2s;
 }
 

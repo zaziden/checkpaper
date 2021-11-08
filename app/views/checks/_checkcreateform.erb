@@ -5,7 +5,11 @@
     </div>
     <div class="check_room_names">
       <div class="check_room_name">
+        <% if Allsale.exists?(checkroom_id: params[:checkroom_id]) %>
+        <%= @checkrooms.room_name %>
+        <% elsif %>
         <%= link_to @checkrooms.room_name, edit_checkroom_path(@checkrooms.id), data: {"turbolinks" => false}, class: 'ou' %>
+        <%end%>
       </div>
       <div class="check_hawmany">
         <%= @checkrooms.how_many%>名
